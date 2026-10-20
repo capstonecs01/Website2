@@ -43,8 +43,9 @@ export ANTHROPIC_API_KEY=sk-ant-...
 Fonts: translated text is drawn with TrueType fonts found in `./fonts`,
 `PDF_TRANSLATOR_FONTS`, or the system font folders (Liberation Sans/Serif or
 Arial/Times, DejaVu for symbols, Noto Sans JP or IPAex Gothic for any Japanese
-that stays in the output). On a server, put the `.ttf` files you want in
-`./fonts` so output looks the same everywhere.
+that stays in the output). `./fonts` already holds Liberation Sans/Serif,
+DejaVu Sans and Noto Sans JP (all free licences, see `fonts/README.txt`), so the
+output looks the same on Windows and on the Render server.
 
 ## Use it
 
@@ -95,6 +96,11 @@ refuses PDFs over `MAX_PAGES` (default 20) before any work starts, and keeps
 job status on disk so finished jobs survive a restart. The full list of
 endpoints is at the top of `server.py`. `examples/flask_app.py` is the original
 minimal version of the same API.
+
+On Render it runs as a private service under gunicorn, set up by `render.yaml`
+at the top of this repository (see `DEPLOY.md`). Settings come from Render's
+environment variables instead of `.env`: `TRANSLATOR_TEST_MODE=1` is the same
+as `--test`, and `PORT` sets the port.
 
 ## Models and cost
 

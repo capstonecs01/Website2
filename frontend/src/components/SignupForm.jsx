@@ -2,12 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ResendVerification from "./ResendVerification";
 import { useLang } from "../i18n/LanguageContext";
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+import { API_BASE_URL } from "../utils/api";
 
 export default function SignupForm({ role }) {
   const { t } = useLang();
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle"); // idle | loading | success | ready | error
   const [errorMessage, setErrorMessage] = useState("");
   const [email, setEmail] = useState(""); // kept so the success screen can offer a resend
 
@@ -63,11 +62,37 @@ export default function SignupForm({ role }) {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
-      setStatus("success");
+      setStatus(data.verified ? "ready" : "success");
     } catch (err) {
       setStatus("error");
       setErrorMessage(err.message);
     }
+  }
+
+  if (status === "ready") {
+    return (
+      <section className="mx-auto flex min-h-[calc(100vh-73px)] max-w-xl flex-col justify-center px-6 py-16">
+        <p className="font-mono-display text-sm tracking-widest" style={{ color: c.accent }}>
+          {c.eyebrow}
+        </p>
+        <h1 className="mt-3 font-mono-display text-3xl font-semibold tracking-tight">{t("su.ready")}</h1>
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-[var(--text-muted)]">
+          {t("su.readyBody", { email })}
+        </p>
+
+        <Link
+          to="/login"
+          className="mt-6 inline-block w-fit rounded-sm px-6 py-3 font-mono-display text-sm font-semibold text-[#0E1116] transition hover:brightness-110"
+          style={{ background: c.accent }}
+        >
+          {t("su.readyLogin")}
+        </Link>
+
+        <Link to="/" className="mt-10 font-mono-display text-xs text-[var(--text-muted)] hover:text-[var(--text)]">
+          {t("login.backHome")}
+        </Link>
+      </section>
+    );
   }
 
   if (status === "success") {

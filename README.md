@@ -4,6 +4,8 @@
 (เป็นไฟล์) เมื่อถูกรับเข้าทีมก็ทำงานร่วมกันผ่านแชทในตัว รองรับ 2 ภาษา (EN / 日本語),
 โหมดสว่าง/มืด, ระบบแปลเอกสาร PDF ด้วย Claude และแปลข้อความแชทด้วย Azure AI Translator
 
+**นำขึ้นออนไลน์ (Render):** ดูขั้นตอนใน [DEPLOY.md](DEPLOY.md) (ภาษาอังกฤษ)
+
 ## โครงสร้าง
 
 | โฟลเดอร์ | คืออะไร |
@@ -45,4 +47,5 @@ npm run dev               # http://localhost:5173
 - `*/.env` — คีย์ลับ (JWT, Resend, Claude API key, TRANSLATOR_SECRET, Azure Translator key)
 - `junction.db` — ฐานข้อมูล สร้างอัตโนมัติตอนรันครั้งแรก
 - `uploads/` — ไฟล์ที่ผู้ใช้อัปโหลด
+  (บน Render ทั้งสองอย่างอยู่บนดิสก์ของ Render แทน โดยตั้งโฟลเดอร์ด้วย `DATA_DIR`)
 - `node_modules/` — รัน `npm install` เพื่อสร้างใหม่

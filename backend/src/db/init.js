@@ -1,11 +1,8 @@
 import Database from "better-sqlite3";
-import path from "path";
-import { fileURLToPath } from "url";
+import { DB_PATH } from "../utils/paths.js";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dbPath = path.join(__dirname, "..", "..", "junction.db");
-
-export const db = new Database(dbPath);
+// The database file lives in DATA_DIR (see utils/paths.js).
+export const db = new Database(DB_PATH);
 db.pragma("journal_mode = WAL");
 
 // --- schema ---
@@ -100,7 +97,7 @@ db.exec(`
 db.exec(`CREATE INDEX IF NOT EXISTS idx_proposals_problem ON proposals(problem_id);`);
 db.exec(`CREATE INDEX IF NOT EXISTS idx_proposals_student ON proposals(student_id);`);
 
-console.log(`[db] SQLite ready at ${dbPath}`);
+console.log(`[db] SQLite ready at ${DB_PATH}`);
 
 // --- chat ---
 // A conversation is one of:

@@ -3,20 +3,29 @@
     python server.py           real translations with Claude (needs ANTHROPIC_API_KEY)
     python server.py --test    free test mode: Claude is never called (see "Test mode" below)
 
+On Render (Linux) it runs under gunicorn instead, with the same settings:
+
+    gunicorn --workers 1 --threads 8 --timeout 180 --bind 0.0.0.0:$PORT "server:app_from_env()"
+
+Keep --workers at 1: running jobs live in this one process.
+
 Settings come from environment variables, or from a .env file next to this
 script (copy .env.example to .env):
 
     ANTHROPIC_API_KEY    your Claude API key (not needed with --test)
     TRANSLATOR_SECRET    shared password. The website sends it in the
                          X-Translator-Key header; any other caller is refused.
-    TRANSLATOR_PORT      default 5000
+    TRANSLATOR_PORT      default 5000 (PORT, set by Render, wins)
+    TRANSLATOR_HOST      default 127.0.0.1 (only this computer can connect)
+    TRANSLATOR_TEST_MODE 1 = the free test mode, same as --test
     MAX_PAGES            longest document accepted, default 20
     MAX_UPLOAD_MB        default 50
     TRANSLATOR_WORKERS   documents translated at the same time, default 2
     KEEP_DAYS            finished jobs older than this are removed at start-up, default 7
 
-The server only listens on this computer (127.0.0.1), so it can't be reached
-from other machines even without the secret.
+On your computer the server only listens on 127.0.0.1, so other machines can't
+reach it even without the secret. On Render it runs as a private service: only
+the website, on Render's private network, can reach it.
 
 Endpoints (all except /api/health need the X-Translator-Key header):
     GET  /api/health                      {"ok", "test_mode", "max_pages", "max_upload_mb"}
@@ -299,40 +308,70 @@ def test_client():
     return fake_claude.FakeClient()
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the PDF translator as a web server for the website.")
-    parser.add_argument("--test", action="store_true", help="free test mode: never calls Claude")
-    args = parser.parse_args()
+class SettingsError(Exception):
+    """A setting is missing; the message says how to fix it."""
 
+
+def is_on(value: str | None) -> bool:
+    return str(value or "").strip().lower() in ("1", "true", "yes", "on")
+
+
+def app_from_settings(test_mode: bool = False) -> Flask:
+    """Build the app from environment variables (and .env, if there is one)."""
     load_env(os.path.join(ROOT, ".env"))
+    test_mode = test_mode or is_on(os.environ.get("TRANSLATOR_TEST_MODE"))
     secret = os.environ.get("TRANSLATOR_SECRET", "")
     if not secret:
-        sys.exit("TRANSLATOR_SECRET is not set. Copy .env.example to .env and fill it in "
-                 "(the website's backend/.env needs the same value).")
+        raise SettingsError("TRANSLATOR_SECRET is not set. Copy .env.example to .env and fill it in "
+                            "(the website's backend/.env needs the same value).")
 
     client = None
-    if args.test:
+    if test_mode:
         client = test_client()
     else:
         try:
             import anthropic  # noqa: F401
         except ImportError:
-            sys.exit("The anthropic package is missing. Run: pip install -r requirements.txt")
+            raise SettingsError("The anthropic package is missing. Run: pip install -r requirements.txt")
         if not os.environ.get("ANTHROPIC_API_KEY"):
-            sys.exit("ANTHROPIC_API_KEY is not set. Put your Claude API key in pdf-translator/.env, "
-                     "or start with --test for the free test mode.")
+            raise SettingsError("ANTHROPIC_API_KEY is not set. Put your Claude API key in pdf-translator/.env, "
+                                "or start with --test for the free test mode.")
 
-    port = int(os.environ.get("TRANSLATOR_PORT") or 5000)
     max_pages = int(os.environ.get("MAX_PAGES") or 20)
-    app = create_app(client=client, secret=secret, max_pages=max_pages,
+    app = create_app(workdir=os.environ.get("JOBS_DIR") or None, client=client, secret=secret,
+                     max_pages=max_pages,
                      max_upload_mb=int(os.environ.get("MAX_UPLOAD_MB") or 50),
                      workers=int(os.environ.get("TRANSLATOR_WORKERS") or 2),
                      keep_days=float(os.environ.get("KEEP_DAYS") or 7),
-                     test_mode=args.test)
-    mode = "TEST MODE (Claude is not called, nothing is charged)" if args.test else "using Claude"
-    print(f"[translator] {mode}")
-    print(f"[translator] listening on http://127.0.0.1:{port}  (max {max_pages} pages per PDF)")
-    app.run(host="127.0.0.1", port=port, debug=False, threaded=True)
+                     test_mode=test_mode)
+    mode = "TEST MODE (Claude is not called, nothing is charged)" if test_mode else "using Claude"
+    print(f"[translator] {mode}  (max {max_pages} pages per PDF)", flush=True)
+    return app
+
+
+def app_from_env() -> Flask:
+    """Entry point for gunicorn on Render: gunicorn "server:app_from_env()"."""
+    try:
+        return app_from_settings()
+    except SettingsError as e:
+        print(f"[translator] {e}", file=sys.stderr, flush=True)
+        raise
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run the PDF translator as a web server for the website.")
+    parser.add_argument("--test", action="store_true", help="free test mode: never calls Claude")
+    args = parser.parse_args()
+
+    try:
+        app = app_from_settings(test_mode=args.test)
+    except SettingsError as e:
+        sys.exit(str(e))
+
+    host = os.environ.get("TRANSLATOR_HOST") or "127.0.0.1"
+    port = int(os.environ.get("PORT") or os.environ.get("TRANSLATOR_PORT") or 5000)
+    print(f"[translator] listening on http://{host}:{port}")
+    app.run(host=host, port=port, debug=False, threaded=True)
 
 
 if __name__ == "__main__":

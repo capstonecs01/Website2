@@ -1,7 +1,8 @@
 import fs from "fs";
 
-// Talks to the PDF translator server (pdf-translator/server.py), which runs next
-// to this API on the same computer. Settings in backend/.env:
+// Talks to the PDF translator server (pdf-translator/server.py). On your computer
+// it runs next to this API; on Render it is a private service. Settings in
+// backend/.env (or Render's environment variables):
 //   TRANSLATOR_URL     where it listens (default http://127.0.0.1:5000)
 //   TRANSLATOR_SECRET  shared password; must equal TRANSLATOR_SECRET in pdf-translator/.env
 // Chat messages are NOT translated here: see azureTranslator.js.
@@ -18,7 +19,10 @@ const WRONG_SECRET =
   "The website and the translator have different TRANSLATOR_SECRET values (check both .env files).";
 
 function baseUrl() {
-  return (process.env.TRANSLATOR_URL || "http://127.0.0.1:5000").replace(/\/+$/, "");
+  let url = (process.env.TRANSLATOR_URL || "http://127.0.0.1:5000").trim().replace(/\/+$/, "");
+  // On Render this is the translator's private address, e.g. "translator-abcd:10000".
+  if (!/^https?:\/\//i.test(url)) url = `http://${url}`;
+  return url;
 }
 
 async function call(path, { method = "GET", body, timeoutMs = 15000, raw = false, headers = {} } = {}) {

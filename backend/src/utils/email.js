@@ -1,6 +1,8 @@
 import { Resend } from "resend";
 
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+// Links in emails point at the website. On Render, RENDER_EXTERNAL_URL is the
+// site's own https://....onrender.com address, so FRONTEND_URL can stay unset.
+const FRONTEND_URL = process.env.FRONTEND_URL || process.env.RENDER_EXTERNAL_URL || "http://localhost:5173";
 const FROM_EMAIL = process.env.FROM_EMAIL || "onboarding@resend.dev";
 const API_KEY = process.env.RESEND_API_KEY;
 

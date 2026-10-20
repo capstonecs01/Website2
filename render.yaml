@@ -1,0 +1,74 @@
+# Render Blueprint for the Junction test site.
+# In Render: New → Blueprint → choose this repository. DEPLOY.md walks through it.
+#
+# Two services from this one repository, both in Singapore (closest region to Japan):
+#   junction    the website: backend/ (Node), which also serves the built frontend/,
+#               with a 1 GB disk for the database and uploaded files
+#   translator  pdf-translator/ (Python), a private service only the website can reach
+#
+# No keys or passwords are written here (this repository is public). Render asks
+# for them when the Blueprint is created and keeps them in its own settings.
+services:
+  - type: web
+    name: junction
+    runtime: node
+    region: singapore
+    plan: 0.5c-512mb # "Starter": $7/month
+    buildCommand: cd frontend && npm ci --include=dev && npm run build && cd ../backend && npm ci
+    startCommand: cd backend && npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    disk:
+      name: junction-data
+      mountPath: /var/data
+      sizeGB: 1 # $0.25/month; can be made bigger later, never smaller
+    envVars:
+      - key: DATA_DIR # junction.db and uploads/ live on the disk
+        value: /var/data
+      - key: SITE_PASSWORD # testers type this before they see the site
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REQUIRE_EMAIL_VERIFICATION # no email set up yet, so accounts work at once
+        value: "false"
+      - key: TRANSLATIONS_PER_DAY # PDF translations per person per day
+        value: "5"
+      - key: AZURE_TRANSLATOR_KEY # chat translation; leave empty for test mode
+        sync: false
+      - key: AZURE_TRANSLATOR_REGION
+        value: japaneast
+      - key: TRANSLATOR_URL
+        fromService:
+          type: pserv
+          name: translator
+          property: hostport
+      - key: TRANSLATOR_SECRET
+        fromService:
+          type: pserv
+          name: translator
+          envVarKey: TRANSLATOR_SECRET
+
+  - type: pserv
+    name: translator
+    runtime: python
+    rootDir: pdf-translator
+    region: singapore
+    plan: 0.5c-512mb # "Starter": $7/month; move to 1c-2g if large PDFs run out of memory
+    buildCommand: pip install -r requirements.txt
+    # One worker on purpose: translations in progress are kept in that one process.
+    startCommand: gunicorn --workers 1 --threads 8 --timeout 180 --bind 0.0.0.0:$PORT "server:app_from_env()"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: PORT
+        value: "10000"
+      - key: TRANSLATOR_SECRET
+        generateValue: true
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: TRANSLATOR_TEST_MODE # "1" = free placeholder translations. Set to "0" for real ones.
+        value: "1"
+      - key: MAX_PAGES
+        value: "20"
+      - key: TRANSLATOR_WORKERS # documents translated at the same time
+        value: "1"

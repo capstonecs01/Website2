@@ -5,8 +5,7 @@ import ResendVerification from "../components/ResendVerification";
 import ThemeToggle from "../components/ThemeToggle";
 import LanguageToggle from "../components/LanguageToggle";
 import { useLang } from "../i18n/LanguageContext";
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+import { API_BASE_URL } from "../utils/api";
 
 export default function Login() {
   const navigate = useNavigate();

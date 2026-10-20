@@ -2,14 +2,12 @@ import { Router } from "express";
 import multer from "multer";
 import path from "path";
 import crypto from "crypto";
-import { fileURLToPath } from "url";
 import { db } from "../db/init.js";
 import { requireAuth, requireRole } from "../utils/authMiddleware.js";
 import { translateChatText, guessLanguage, ChatTranslateError, MAX_CHARS } from "../utils/azureTranslator.js";
+import { UPLOAD_DIR } from "../utils/paths.js";
 
 const router = Router();
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const UPLOAD_DIR = path.join(__dirname, "..", "..", "uploads");
 
 // --- file uploads (images / files) -> saved to /uploads, served statically ---
 const storage = multer.diskStorage({

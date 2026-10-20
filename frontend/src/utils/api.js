@@ -1,6 +1,10 @@
 import { getToken, clearSession } from "./auth";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+// Where the back end is. During development (npm run dev) it runs on its own
+// port. In the built site the back end serves the pages itself (that's how it
+// runs on Render), so the API is at the same address as the page: "".
+// Set VITE_API_URL to override either.
+const API_BASE_URL = import.meta.env.VITE_API_URL ?? (import.meta.env.DEV ? "http://localhost:3001" : "");
 
 // Thin fetch wrapper that attaches the JWT and unwraps JSON / errors.
 // `path` is relative to the API's /api root, e.g. apiFetch("/problems").

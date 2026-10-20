@@ -1,12 +1,11 @@
 import multer from "multer";
 import path from "path";
 import crypto from "crypto";
-import { fileURLToPath } from "url";
+import { UPLOAD_DIR } from "./paths.js";
 
-// Shared file-upload config. Files land in the project's /uploads folder, which
-// server.js serves statically at /uploads. 10 MB cap per file.
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export const UPLOAD_DIR = path.join(__dirname, "..", "..", "uploads");
+// Shared file-upload config. Files land in the uploads folder inside DATA_DIR
+// (see paths.js), which server.js serves at /uploads. 10 MB cap per file.
+export { UPLOAD_DIR };
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, UPLOAD_DIR),

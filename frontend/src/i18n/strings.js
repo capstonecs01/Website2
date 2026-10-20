@@ -416,6 +416,9 @@ export const strings = {
     "su.checkEmail": "Check your email",
     "su.sentLink": "We sent a verification link to {email}. Click it to activate your account — the link expires in 24 hours.",
     "su.didntGet": "Didn't get the email?",
+    "su.ready": "Your account is ready",
+    "su.readyBody": "You can log in now with {email}.",
+    "su.readyLogin": "Log in →",
 
     // verify email
     "ve.verifying": "VERIFYING…",
@@ -850,6 +853,9 @@ export const strings = {
     "su.checkEmail": "メールを確認してください",
     "su.sentLink": "{email} に確認リンクを送信しました。クリックしてアカウントを有効化してください——リンクは24時間で期限切れになります。",
     "su.didntGet": "メールが届きませんでしたか？",
+    "su.ready": "アカウントの準備ができました",
+    "su.readyBody": "{email} で今すぐログインできます。",
+    "su.readyLogin": "ログイン →",
 
     // verify email
     "ve.verifying": "確認中…",

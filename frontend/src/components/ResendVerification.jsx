@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLang } from "../i18n/LanguageContext";
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+import { API_BASE_URL } from "../utils/api";
 
 // Small inline "resend the verification email" control.
 // Reused on the signup success screen and the login "please verify" state.

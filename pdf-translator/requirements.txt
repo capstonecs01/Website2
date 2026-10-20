@@ -4,4 +4,5 @@ pikepdf>=8.0        # removes the original text, merges the new layer (MPL-2.0)
 reportlab>=4.0      # draws the translated text (BSD)
 pypdfium2>=4.0      # renders page images for Claude to look at (Apache/BSD)
 Pillow>=10.0
-flask>=3.0          # only for examples/flask_app.py
+flask>=3.0          # server.py and examples/flask_app.py
+gunicorn>=23.0      # runs server.py on Render (Linux only; not used on Windows)

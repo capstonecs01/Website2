@@ -10,6 +10,13 @@ const router = Router();
 const SALT_ROUNDS = 10;
 const JWT_SECRET = process.env.JWT_SECRET || "dev-only-secret-change-me";
 
+// Set REQUIRE_EMAIL_VERIFICATION=false for a closed test where testers can't
+// receive emails yet (Resend's test sender only delivers to your own address).
+// New accounts are then verified straight away. The default is to require it.
+function emailVerificationRequired() {
+  return String(process.env.REQUIRE_EMAIL_VERIFICATION ?? "true").toLowerCase() !== "false";
+}
+
 // Builds the signed-in payload returned by /login and /demo-login.
 function issueSession(user) {
   const token = jwt.sign({ id: user.id, role: user.role, email: user.email }, JWT_SECRET, {
@@ -46,15 +53,16 @@ router.post("/signup", async (req, res) => {
   }
 
   const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
-  const verificationToken = generateToken();
-  const verificationExpires = Date.now() + VERIFICATION_TOKEN_TTL_MS;
+  const needsVerification = emailVerificationRequired();
+  const verificationToken = needsVerification ? generateToken() : null;
+  const verificationExpires = needsVerification ? Date.now() + VERIFICATION_TOKEN_TTL_MS : null;
 
   const insert = db.prepare(`
     INSERT INTO users (
       email, password_hash, role, full_name,
       company_name, job_title, school, major,
       email_verified, verification_token, verification_token_expires
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
   const result = insert.run(
@@ -66,9 +74,18 @@ router.post("/signup", async (req, res) => {
     jobTitle || null,
     school || null,
     major || null,
+    needsVerification ? 0 : 1,
     verificationToken,
     verificationExpires
   );
+
+  if (!needsVerification) {
+    return res.status(201).json({
+      id: result.lastInsertRowid,
+      verified: true,
+      message: "Account created. You can log in now.",
+    });
+  }
 
   try {
     await sendVerificationEmail({ to: email, fullName, token: verificationToken });
