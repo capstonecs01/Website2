@@ -5,7 +5,7 @@ import crypto from "crypto";
 import { fileURLToPath } from "url";
 import { db } from "../db/init.js";
 import { requireAuth, requireRole } from "../utils/authMiddleware.js";
-import { translateText, TranslatorError } from "../utils/translator.js";
+import { translateChatText, guessLanguage, ChatTranslateError, MAX_CHARS } from "../utils/azureTranslator.js";
 
 const router = Router();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -294,20 +294,60 @@ router.post("/conversations/:id/messages", requireAuth, requireMember, upload.si
 });
 
 // -------------------------------------------------------------------
-// POST /api/chat/translate  { text, target } — translate one chat message
-// into the caller's chosen language ("en" / "ja"). Uses the translator server.
+// POST /api/chat/translate  { messageId, target } — translate one chat message
+// with Azure AI Translator. `target` is the reader's site language ("en"/"ja").
+// A message already in that language is translated into the other one instead
+// (English <-> Japanese), so the button always gives something useful.
+// Only members of the message's conversation may translate it, and each
+// message is translated once per language (saved in message_translations).
+// Responds { text, to, cached }.
 // -------------------------------------------------------------------
+const OTHER_LANG = { en: "ja", ja: "en" };
+
 router.post("/translate", requireAuth, async (req, res) => {
-  const text = (req.body.text || "").trim();
-  const target = req.body.target === "ja" || req.body.target === "Japanese" ? "Japanese" : "English";
-  if (!text) return res.status(400).json({ error: "text is required" });
+  const messageId = Number(req.body.messageId);
+  const wanted = req.body.target === "ja" || req.body.target === "Japanese" ? "ja" : "en";
+  if (!messageId) return res.status(400).json({ error: "messageId is required" });
+
+  const msg = db.prepare("SELECT id, conversation_id, body FROM messages WHERE id = ?").get(messageId);
+  if (!msg || !isMember(msg.conversation_id, req.user.id)) {
+    return res.status(404).json({ error: "message not found" });
+  }
+  const text = (msg.body || "").trim();
+  if (!text) return res.status(400).json({ error: "this message has no text to translate" });
+
+  const savedText = (lang) =>
+    db.prepare("SELECT text FROM message_translations WHERE message_id = ? AND target_lang = ?").get(msg.id, lang)
+      ?.text;
+
+  let to = guessLanguage(text) === wanted ? OTHER_LANG[wanted] : wanted;
+  let saved = savedText(to);
+  if (saved !== undefined) return res.json({ text: saved, to, cached: true });
+
+  if (text.length > MAX_CHARS) {
+    return res.status(400).json({ error: `This message is too long to translate (over ${MAX_CHARS} characters).` });
+  }
 
   try {
-    const translated = await translateText({ text, target });
-    res.json({ text: translated });
+    let result = await translateChatText(text, to);
+    // The guess was wrong: Azure says the message is already in `to`. Use the other language.
+    if (!result.test && result.from === to) {
+      to = OTHER_LANG[to];
+      saved = savedText(to);
+      if (saved !== undefined) return res.json({ text: saved, to, cached: true });
+      result = await translateChatText(text, to);
+    }
+    // Test-mode output isn't saved, so real translations appear once a key is added.
+    if (!result.test) {
+      db.prepare(
+        `INSERT OR REPLACE INTO message_translations (message_id, target_lang, text, source_lang)
+         VALUES (?, ?, ?, ?)`
+      ).run(msg.id, to, result.text, result.from);
+    }
+    res.json({ text: result.text, to, cached: false });
   } catch (err) {
-    if (err instanceof TranslatorError) {
-      return res.status(err.status || 503).json({ error: err.message });
+    if (err instanceof ChatTranslateError) {
+      return res.status(err.status).json({ error: err.message });
     }
     throw err;
   }

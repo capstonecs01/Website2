@@ -1,5 +1,5 @@
 // Client-side mirror of the backend keyword normaliser
-// (junction-api/src/utils/keywords.js). Kept in sync so the tag picker can
+// (backend/src/utils/keywords.js). Kept in sync so the tag picker can
 // merge "code"/"Coding"/"programming" into one canonical chip immediately,
 // before the value is ever sent. The server normalises again as source of truth.
 

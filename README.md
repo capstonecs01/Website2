@@ -2,19 +2,19 @@
 
 แพลตฟอร์มจับคู่ **บริษัท ↔ ทีมนักเรียน** — บริษัทโพสต์โจทย์จริง นักเรียนส่งข้อเสนอ
 (เป็นไฟล์) เมื่อถูกรับเข้าทีมก็ทำงานร่วมกันผ่านแชทในตัว รองรับ 2 ภาษา (EN / 日本語),
-โหมดสว่าง/มืด, และระบบแปลเอกสาร PDF + แปลข้อความแชทด้วย Claude
+โหมดสว่าง/มืด, ระบบแปลเอกสาร PDF ด้วย Claude และแปลข้อความแชทด้วย Azure AI Translator
 
 ## โครงสร้าง
 
 | โฟลเดอร์ | คืออะไร |
 |---|---|
-| `26C01Web/web26C01/` | เว็บ (React + Vite + Tailwind) |
-| `junction-api/junction-api/` | API (Node.js + Express + SQLite + JWT) |
+| `frontend/` | เว็บ (React + Vite + Tailwind) |
+| `backend/` | API (Node.js + Express + SQLite + JWT) |
 | `pdf-translator/` | ตัวแปล PDF/ข้อความ (Python + Flask + Claude) |
 
 ## วิธีรัน (3 terminal)
 
-**1. ตัวแปล** (จำเป็นเฉพาะฟีเจอร์ Documents / แปลแชท)
+**1. ตัวแปล PDF** (จำเป็นเฉพาะฟีเจอร์ Documents — การแปลแชทไม่ต้องใช้)
 ```bash
 cd pdf-translator
 pip install -r requirements.txt
@@ -24,23 +24,25 @@ python server.py --test  # โหมดทดสอบฟรี (ไม่เร
 
 **2. Backend**
 ```bash
-cd junction-api/junction-api
+cd backend
 npm install
-copy .env.example .env    # ตั้ง JWT_SECRET, RESEND_API_KEY, TRANSLATOR_SECRET
+copy .env.example .env    # ตั้ง JWT_SECRET, RESEND_API_KEY, TRANSLATOR_SECRET, AZURE_TRANSLATOR_KEY, AZURE_TRANSLATOR_REGION
 npm run dev               # http://localhost:3001
 ```
 
 **3. Frontend**
 ```bash
-cd 26C01Web/web26C01
+cd frontend
 npm install
 npm run dev               # http://localhost:5173
 ```
 
+การแปลแชทใช้ Azure AI Translator โดยตรงจาก backend (ไม่ผ่านตัวแปล PDF) — ถ้ายังไม่ใส่ `AZURE_TRANSLATOR_KEY` ปุ่มแปลในแชทจะอยู่ในโหมดทดสอบ (ตอบกลับเป็น "(test translation) ...")
+
 เปิด http://localhost:5173 → **Log in** → **Explore as Company / Student** เพื่อลองด้วยบัญชี demo
 
 ## ไม่รวมใน repo นี้ (สร้างเองจาก `.env.example`)
-- `*/.env` — คีย์ลับ (JWT, Resend, Claude API key, TRANSLATOR_SECRET)
+- `*/.env` — คีย์ลับ (JWT, Resend, Claude API key, TRANSLATOR_SECRET, Azure Translator key)
 - `junction.db` — ฐานข้อมูล สร้างอัตโนมัติตอนรันครั้งแรก
 - `uploads/` — ไฟล์ที่ผู้ใช้อัปโหลด
 - `node_modules/` — รัน `npm install` เพื่อสร้างใหม่

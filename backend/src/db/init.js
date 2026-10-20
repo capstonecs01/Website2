@@ -147,6 +147,23 @@ db.exec(`CREATE INDEX IF NOT EXISTS idx_conv_members_user ON conversation_member
 db.exec(`CREATE INDEX IF NOT EXISTS idx_messages_conversation ON messages(conversation_id);`);
 db.exec(`CREATE INDEX IF NOT EXISTS idx_conversations_problem ON conversations(problem_id);`);
 
+// --- chat message translations (Azure AI Translator) ---
+// A chat message is translated at most once per language. Everyone who clicks
+// "Translate" on it afterwards gets this saved copy, so Azure only bills once.
+db.exec(`
+  CREATE TABLE IF NOT EXISTS message_translations (
+    message_id   INTEGER NOT NULL REFERENCES messages(id) ON DELETE CASCADE,
+    target_lang  TEXT NOT NULL,      -- 'en' or 'ja'
+    text         TEXT NOT NULL,
+    source_lang  TEXT,               -- the language Azure detected
+    created_at   TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (message_id, target_lang)
+  );
+`);
+// Drop useless rows where a message was "translated" into the language it was
+// already in (saved before same-language messages were switched to the other language).
+db.exec(`DELETE FROM message_translations WHERE source_lang = target_lang`);
+
 // --- proposal team members ---
 // A proposal's leader is proposals.student_id; the additional teammates they
 // bring are listed here as real student accounts. This lets us stop a student

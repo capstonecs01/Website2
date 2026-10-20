@@ -43,7 +43,7 @@ export default function Messages() {
   async function translateMsg(m) {
     setTxBusy(m.id);
     try {
-      const d = await apiFetch("/chat/translate", { method: "POST", body: { text: m.body, target: lang } });
+      const d = await apiFetch("/chat/translate", { method: "POST", body: { messageId: m.id, target: lang } });
       setTx((prev) => ({ ...prev, [m.id]: d.text }));
     } catch (err) {
       setError(err.message);

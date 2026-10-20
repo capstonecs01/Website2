@@ -3,7 +3,7 @@
 // Needs the translator running in FREE test mode, with the same TRANSLATOR_SECRET
 // as backend/.env:
 //     cd pdf-translator && python server.py --test
-//     cd junction-website/backend && node test-documents.mjs
+//     cd backend && node test-documents.mjs
 //
 // Creates two throwaway accounts and removes them (and their files) at the end.
 import fs from "fs";

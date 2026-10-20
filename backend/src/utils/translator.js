@@ -1,9 +1,10 @@
 import fs from "fs";
 
-// Talks to the translator server (pdf-translator/server.py), which runs next
+// Talks to the PDF translator server (pdf-translator/server.py), which runs next
 // to this API on the same computer. Settings in backend/.env:
 //   TRANSLATOR_URL     where it listens (default http://127.0.0.1:5000)
 //   TRANSLATOR_SECRET  shared password; must equal TRANSLATOR_SECRET in pdf-translator/.env
+// Chat messages are NOT translated here: see azureTranslator.js.
 
 export class TranslatorError extends Error {
   constructor(message, status) {
@@ -76,17 +77,6 @@ export async function submitTranslation({ filePath, fileName, source, target, re
 // { status: queued|running|done|failed, stage, done, total, languages, warnings, usage, error }
 export function getTranslation(jobId) {
   return call(`/api/translations/${encodeURIComponent(jobId)}`);
-}
-
-// Plain text translation for chat messages. Resolves to the translated string.
-export async function translateText({ text, target }) {
-  const data = await call("/api/translate-text", {
-    method: "POST",
-    body: JSON.stringify({ text, target }),
-    headers: { "Content-Type": "application/json" },
-    timeoutMs: 20000,
-  });
-  return data.text;
 }
 
 // Saves the finished PDF to destPath.

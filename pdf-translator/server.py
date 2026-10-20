@@ -183,41 +183,6 @@ def create_app(workdir: str | None = None, *, client=None, secret: str = "", max
     def health():
         return jsonify({"ok": True, "test_mode": test_mode, "max_pages": max_pages, "max_upload_mb": max_upload_mb})
 
-    # Plain text translation (used by the website's chat). Separate from the PDF
-    # pipeline: one short Claude call, no layout work. In test mode it returns a
-    # clearly-labelled stub so the flow can be exercised without an API key.
-    @app.post("/api/translate-text")
-    def translate_text():
-        data = request.get_json(force=True, silent=True) or {}
-        text = (data.get("text") or "").strip()
-        target = (data.get("target") or "English").strip()[:40]
-        if not text:
-            abort(400, "text is required")
-        text = text[:4000]
-
-        if test_mode:
-            is_ja = target.lower().startswith("japan") or target == "日本語"
-            prefix = "（テスト翻訳）" if is_ja else "(test translation) "
-            return jsonify({"text": prefix + text})
-
-        model = os.environ.get("CHAT_TRANSLATE_MODEL") or "claude-sonnet-5-5"
-        try:
-            resp = client.messages.create(
-                model=model,
-                max_tokens=1500,
-                system=(
-                    f"You are a translator. Translate the user's message into {target}. "
-                    "Reply with ONLY the translation — no quotes, no explanations, no notes. "
-                    "Keep URLs, @mentions, emoji, numbers and line breaks as they are. "
-                    "If the text is already in the target language, return it unchanged."
-                ),
-                messages=[{"role": "user", "content": text}],
-            )
-            out = "".join(getattr(b, "text", "") for b in resp.content).strip()
-            return jsonify({"text": out or text})
-        except Exception as e:
-            return jsonify({"error": friendly_error(e)}), 502
-
     @app.post("/api/translations")
     def create():
         f = request.files.get("file")
