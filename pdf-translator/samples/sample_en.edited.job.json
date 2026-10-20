@@ -1,0 +1,1917 @@
+{
+ "source_path": "C:\\Capstone2026\\pdf-translator\\samples\\sample_ja.pdf",
+ "options": {
+  "source_lang": "Japanese",
+  "target_lang": "English",
+  "analysis_model": "claude-opus-5-5",
+  "translate_model": "claude-sonnet-5-5",
+  "review_model": "claude-opus-5-5",
+  "review": true,
+  "review_autofix": true,
+  "extra_instructions": "",
+  "glossary": {},
+  "max_workers": 4,
+  "max_analysis_pages": 100,
+  "font_dir": null,
+  "min_font_scale": 0.55
+ },
+ "brief": {
+  "document_type": "Formal business invitation letter (案内状) with an attached one-page product sheet",
+  "summary": "Sakura Tech invites its business partners to the launch event for SakuraScan Pro, an AI document scanner, on November 20, 2026 in Osaka. Page 2 summarises the product's features, specifications and prices.",
+  "audience": "Existing corporate customers and partners; the English version is for international partners.",
+  "source_tone": "Very formal keigo with standard Japanese letter formulas (拝啓/敬具, seasonal greeting, 記/以上).",
+  "target_style": "Courteous, professional business English. Warm but concise; no literal seasonal greetings.",
+  "conventions": [
+   "Convert era dates to the Western calendar: 令和8年10月7日 → October 7, 2026.",
+   "Write dates as 'Friday, November 20, 2026' and times as '2:00–4:30 p.m.'.",
+   "Personal names in Western order with no honorific: 佐藤 花子 → Hanako Sato, 山田 太郎 → Taro Yamada.",
+   "拝啓 + seasonal greeting → a short courteous opening; 敬具 → 'Sincerely,'; 記 → 'Event Details'; drop 以上.",
+   "※ notes → start with 'Note:'.",
+   "枚/分 → 'pages/min'. Keep ¥ amounts as written.",
+   "Bullets '・' → '•'."
+  ],
+  "glossary": [
+   {
+    "source": "株式会社さくらテック",
+    "target": "Sakura Tech Co., Ltd."
+   },
+   {
+    "source": "SakuraScan Pro",
+    "target": "SakuraScan Pro"
+   },
+   {
+    "source": "発表会",
+    "target": "launch event"
+   },
+   {
+    "source": "大阪国際会議場",
+    "target": "Osaka International Convention Center"
+   }
+  ],
+  "keep_as_is": [
+   "SakuraScan Pro",
+   "SakuraScan Lite",
+   "SAKURA TECH",
+   "AI-OCR"
+  ]
+ },
+ "review": [
+  {
+   "segment_id": "p1-14",
+   "severity": "medium",
+   "problem": "The venue line was shrunk to fit its cell and is noticeably smaller than the other rows.",
+   "replacement": "Osaka International Convention Center, Room 1001 (10F), 5-3-51 Nakanoshima, Osaka",
+   "page": 1,
+   "applied": true
+  },
+  {
+   "segment_id": "",
+   "severity": "low",
+   "problem": "Sign-off sits above the details block, as in the original; acceptable for an invitation.",
+   "replacement": "",
+   "page": 1
+  }
+ ],
+ "warnings": [],
+ "usage": {
+  "by_model": {
+   "claude-opus-5-5": {
+    "calls": 3,
+    "input": 14000,
+    "output": 628,
+    "cache_write": 0,
+    "cache_read": 0
+   },
+   "claude-sonnet-5-5": {
+    "calls": 3,
+    "input": 9243,
+    "output": 859,
+    "cache_write": 0,
+    "cache_read": 0
+   }
+  },
+  "estimated_cost_usd": 0.0956
+ },
+ "pages": [
+  {
+   "index": 0,
+   "width": 595.2756,
+   "height": 841.8898,
+   "rotation": 0,
+   "status": "ok",
+   "note": "",
+   "segments": [
+    {
+     "id": "p1-1",
+     "page": 0,
+     "kind": "heading",
+     "text": "株式会社さくらテック",
+     "bbox": [
+      92.0,
+      20.68164079999997,
+      232.0,
+      34.68164079999997
+     ],
+     "box": [
+      92.0,
+      20.68164079999997,
+      450.81940000000003,
+      52.5
+     ],
+     "size": 14.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 97,
+     "baseline": 33.0,
+     "angle": 0.0,
+     "translation": "Sakura Tech Co., Ltd.",
+     "render_size": 14.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-2",
+     "page": 0,
+     "kind": "heading",
+     "text": "SAKURA TECH",
+     "bbox": [
+      459.2194,
+      23.31494120000002,
+      539.2755542,
+      34.31494120000002
+     ],
+     "box": [
+      238.6,
+      23.31494120000002,
+      539.2755542,
+      53.25
+     ],
+     "size": 11.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": false,
+     "color": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "align": "right",
+     "translate": false,
+     "max_chars": 103,
+     "baseline": 32.0,
+     "angle": 0.0,
+     "translation": "SAKURA TECH",
+     "render_size": 11.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-3",
+     "page": 0,
+     "kind": "line",
+     "text": "令和8年10月7日",
+     "bbox": [
+      465.7756,
+      82.76123059999998,
+      539.2755999999999,
+      93.26123059999998
+     ],
+     "box": [
+      56.0,
+      82.76123059999998,
+      539.2755999999999,
+      108.13623059999998
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "right",
+     "translate": true,
+     "max_chars": 174,
+     "baseline": 92.0,
+     "angle": 0.0,
+     "translation": "October 7, 2026",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-4",
+     "page": 0,
+     "kind": "line",
+     "text": "お取引先各位",
+     "bbox": [
+      56.0,
+      110.76123059999998,
+      119.0,
+      121.26123059999998
+     ],
+     "box": [
+      56.0,
+      110.76123059999998,
+      539.2756,
+      134.13623059999998
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 174,
+     "baseline": 120.0,
+     "angle": 0.0,
+     "translation": "To our valued business partners",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-5",
+     "page": 0,
+     "kind": "line",
+     "text": "株式会社さくらテック\n営業部長　佐藤 花子",
+     "bbox": [
+      434.2756,
+      136.76123059999998,
+      539.2755999999999,
+      165.26123059999998
+     ],
+     "box": [
+      56.0,
+      136.76123059999998,
+      539.2755999999999,
+      189.29687520000004
+     ],
+     "size": 10.5,
+     "leading": 1.714,
+     "lines": 2,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "right",
+     "translate": true,
+     "max_chars": 349,
+     "baseline": 146.0,
+     "angle": 0.0,
+     "translation": "Sakura Tech Co., Ltd.\nHanako Sato, Sales Director",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-6",
+     "page": 0,
+     "kind": "heading",
+     "text": "新製品「SakuraScan Pro」発表会のご案内",
+     "bbox": [
+      145.6378,
+      191.92187520000004,
+      449.63779999999997,
+      207.92187520000004
+     ],
+     "box": [
+      56.0,
+      191.92187520000004,
+      539.2755999999999,
+      210.0
+     ],
+     "size": 16.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 57,
+     "baseline": 206.0,
+     "angle": 0.0,
+     "translation": "Invitation to the SakuraScan Pro Launch Event",
+     "render_size": 16.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-7",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "拝啓　秋冷の候、貴社ますますご清栄のこととお慶び申し上げます。平素は格別のご高配を賜り、厚く御礼申し上げます。",
+     "bbox": [
+      56.0,
+      236.76123059999998,
+      539.0,
+      265.1112306
+     ],
+     "box": [
+      56.0,
+      236.76123059999998,
+      539.0,
+      273.8362306
+     ],
+     "size": 10.5,
+     "leading": 1.7,
+     "lines": 2,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 262,
+     "baseline": 246.0,
+     "angle": 0.0,
+     "translation": "Dear Partners,\nWe hope this letter finds you well, and we thank you for your continued support.",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-8",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "さて、このたび弊社では、AIを活用した文書スキャナー「SakuraScan Pro」を開発いたしました。つきましては、下記のとおり新製品発表会を開催いたしますので、ご多忙中誠に恐縮ではございますが、ぜひご来場賜りますようお願い申し上げます。",
+     "bbox": [
+      56.0,
+      276.4612306,
+      539.0,
+      322.66123060000007
+     ],
+     "box": [
+      56.0,
+      276.4612306,
+      539.0,
+      329.38623060000003
+     ],
+     "size": 10.5,
+     "leading": 1.7,
+     "lines": 3,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 349,
+     "baseline": 285.7,
+     "angle": 0.0,
+     "translation": "We are pleased to announce SakuraScan Pro, our new AI-powered document scanner. We will be holding a launch event as detailed below. We know how busy you are, but we would be delighted if you could join us.",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-9",
+     "page": 0,
+     "kind": "line",
+     "text": "敬具",
+     "bbox": [
+      518.2756,
+      332.01123060000003,
+      539.2756,
+      342.51123060000003
+     ],
+     "box": [
+      56.0,
+      332.01123060000003,
+      539.2756,
+      361.38623060000003
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "right",
+     "translate": true,
+     "max_chars": 174,
+     "baseline": 341.25,
+     "angle": 0.0,
+     "translation": "Sincerely,",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-10",
+     "page": 0,
+     "kind": "line",
+     "text": "記",
+     "bbox": [
+      292.3878,
+      364.01123060000003,
+      302.8878,
+      374.51123060000003
+     ],
+     "box": [
+      56.0,
+      364.01123060000003,
+      539.2756,
+      386.62500000000006
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 174,
+     "baseline": 373.25,
+     "angle": 0.0,
+     "translation": "Event Details",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-11",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "日時",
+     "bbox": [
+      91.0,
+      395.95117200000004,
+      111.0,
+      405.95117200000004
+     ],
+     "box": [
+      59.0,
+      391.25000000000006,
+      143.0,
+      411.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 15,
+     "baseline": 404.75,
+     "angle": 0.0,
+     "translation": "Date & time",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-12",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "2026年11月20日（金）14:00〜16:30（受付開始 13:30）",
+     "bbox": [
+      152.0,
+      395.95117200000004,
+      402.0,
+      405.95117200000004
+     ],
+     "box": [
+      152.0,
+      391.25000000000006,
+      536.2755999999999,
+      411.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 73,
+     "baseline": 404.75,
+     "angle": 0.0,
+     "translation": "Friday, November 20, 2026, 2:00–4:30 p.m. (reception opens at 1:30 p.m.)",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-13",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "会場",
+     "bbox": [
+      91.0,
+      419.95117200000004,
+      111.0,
+      429.95117200000004
+     ],
+     "box": [
+      59.0,
+      415.25000000000006,
+      143.0,
+      435.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 15,
+     "baseline": 428.75,
+     "angle": 0.0,
+     "translation": "Venue",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-14",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "大阪国際会議場 10階 会議室1001（大阪市北区中之島5-3-51）",
+     "bbox": [
+      152.0,
+      419.95117200000004,
+      432.0,
+      429.95117200000004
+     ],
+     "box": [
+      152.0,
+      415.25000000000006,
+      536.2755999999999,
+      435.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 73,
+     "baseline": 428.75,
+     "angle": 0.0,
+     "translation": "Osaka International Convention Center, Room 1001 (10F), 5-3-51 Nakanoshima, Osaka",
+     "render_size": 9.7,
+     "overflow": false
+    },
+    {
+     "id": "p1-15",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "内容",
+     "bbox": [
+      91.0,
+      443.95117200000004,
+      111.0,
+      453.95117200000004
+     ],
+     "box": [
+      59.0,
+      439.25000000000006,
+      143.0,
+      459.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 15,
+     "baseline": 452.75,
+     "angle": 0.0,
+     "translation": "Program",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-16",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "製品デモンストレーション、開発者による技術解説、質疑応答",
+     "bbox": [
+      152.0,
+      443.95117200000004,
+      432.0,
+      453.95117200000004
+     ],
+     "box": [
+      152.0,
+      439.25000000000006,
+      536.2755999999999,
+      459.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 73,
+     "baseline": 452.75,
+     "angle": 0.0,
+     "translation": "Product demo, technical talk by our developers, Q&A",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-17",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "参加費",
+     "bbox": [
+      86.0,
+      467.95117200000004,
+      116.0,
+      477.95117200000004
+     ],
+     "box": [
+      59.0,
+      463.25000000000006,
+      143.0,
+      483.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 15,
+     "baseline": 476.75,
+     "angle": 0.0,
+     "translation": "Fee",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-18",
+     "page": 0,
+     "kind": "table_cell",
+     "text": "無料（事前登録制・定員80名）",
+     "bbox": [
+      152.0,
+      467.95117200000004,
+      292.0,
+      477.95117200000004
+     ],
+     "box": [
+      152.0,
+      463.25000000000006,
+      536.2755999999999,
+      483.25000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 73,
+     "baseline": 476.75,
+     "angle": 0.0,
+     "translation": "Free (advance registration required; limited to 80 guests)",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-19",
+     "page": 0,
+     "kind": "line",
+     "text": "以上",
+     "bbox": [
+      518.2756,
+      498.01123060000003,
+      539.2756,
+      508.51123060000003
+     ],
+     "box": [
+      56.0,
+      498.01123060000003,
+      539.2756,
+      532.625
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "right",
+     "translate": true,
+     "max_chars": 174,
+     "baseline": 507.25,
+     "angle": 0.0,
+     "translation": "",
+     "render_size": null,
+     "overflow": false
+    },
+    {
+     "id": "p1-20",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "※ご参加の際は、10月31日（金）までに同封の申込書にてお申し込みください。当日は名刺を1枚ご持参ください。",
+     "bbox": [
+      68.0,
+      544.8911134,
+      519.25,
+      569.5911134
+     ],
+     "box": [
+      68.0,
+      544.8911134,
+      519.25,
+      578.875
+     ],
+     "size": 9.5,
+     "leading": 1.6,
+     "lines": 2,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 270,
+     "baseline": 553.25,
+     "angle": 0.0,
+     "translation": "Note: To attend, please register with the enclosed form by Friday, October 31. Please bring one business card on the day.",
+     "render_size": 9.5,
+     "overflow": false
+    },
+    {
+     "id": "p1-21",
+     "page": 0,
+     "kind": "line",
+     "text": "お問い合わせ：営業部　山田 太郎　TEL 06-1234-5678　Email: yamada@sakura-tech.example.jp",
+     "bbox": [
+      56.0,
+      779.9708548000001,
+      447.5,
+      788.9708548
+     ],
+     "box": [
+      56.0,
+      779.9708548000001,
+      539.2756,
+      821.8898
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 408,
+     "baseline": 787.89,
+     "angle": 0.0,
+     "translation": "Contact: Taro Yamada, Sales Department   Tel: 06-1234-5678   Email: yamada@sakura-tech.example.jp",
+     "render_size": 9.0,
+     "overflow": false
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "width": 595.2756,
+   "height": 841.8898,
+   "rotation": 0,
+   "status": "ok",
+   "note": "",
+   "segments": [
+    {
+     "id": "p2-1",
+     "page": 1,
+     "kind": "heading",
+     "text": "SakuraScan Pro 製品概要",
+     "bbox": [
+      56.0,
+      62.40234399999997,
+      286.0,
+      82.40234399999997
+     ],
+     "box": [
+      56.0,
+      62.40234399999997,
+      539.2756,
+      90.4414064
+     ],
+     "size": 20.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.11,
+      0.23,
+      0.42
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 45,
+     "baseline": 80.0,
+     "angle": 0.0,
+     "translation": "SakuraScan Pro Product Overview",
+     "render_size": 20.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-2",
+     "page": 1,
+     "kind": "line",
+     "text": "書類のデジタル化を、もっと速く、もっと正確に。",
+     "bbox": [
+      56.0,
+      95.4414064,
+      332.0,
+      107.4414064
+     ],
+     "box": [
+      56.0,
+      95.4414064,
+      539.2756,
+      133.0
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.85,
+      0.33,
+      0.52
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 153,
+     "baseline": 106.0,
+     "angle": 0.0,
+     "translation": "Faster, more accurate document digitization.",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-3",
+     "page": 1,
+     "kind": "heading",
+     "text": "主な特長",
+     "bbox": [
+      68.0,
+      138.5615236,
+      120.0,
+      151.5615236
+     ],
+     "box": [
+      68.0,
+      138.5615236,
+      539.2756,
+      163.51123059999998
+     ],
+     "size": 13.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.11,
+      0.23,
+      0.42
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 68,
+     "baseline": 150.0,
+     "angle": 0.0,
+     "translation": "Key Features",
+     "render_size": 13.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-4",
+     "page": 1,
+     "kind": "line",
+     "text": "・毎分60枚の高速両面スキャン",
+     "bbox": [
+      64.0,
+      166.76123059999998,
+      211.0,
+      177.26123059999998
+     ],
+     "box": [
+      64.0,
+      166.76123059999998,
+      539.2756,
+      184.13623059999998
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 86,
+     "baseline": 176.0,
+     "angle": 0.0,
+     "translation": "• High-speed duplex scanning at 60 pages per minute",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p2-5",
+     "page": 1,
+     "kind": "line",
+     "text": "・AI-OCRにより、手書き文字も高精度でテキスト化",
+     "bbox": [
+      64.0,
+      186.76123059999998,
+      305.5,
+      197.26123059999998
+     ],
+     "box": [
+      64.0,
+      186.76123059999998,
+      539.2756,
+      204.13623059999998
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 86,
+     "baseline": 196.0,
+     "angle": 0.0,
+     "translation": "• AI-OCR turns even handwriting into accurate text",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p2-6",
+     "page": 1,
+     "kind": "line",
+     "text": "・クラウドストレージと自動連携し、社内共有をスムーズに",
+     "bbox": [
+      64.0,
+      206.76123059999998,
+      347.5,
+      217.26123059999998
+     ],
+     "box": [
+      64.0,
+      206.76123059999998,
+      539.2756,
+      241.9365236
+     ],
+     "size": 10.5,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 258,
+     "baseline": 216.0,
+     "angle": 0.0,
+     "translation": "• Syncs automatically with cloud storage for easy sharing across your company",
+     "render_size": 10.5,
+     "overflow": false
+    },
+    {
+     "id": "p2-7",
+     "page": 1,
+     "kind": "heading",
+     "text": "仕様",
+     "bbox": [
+      68.0,
+      244.5615236,
+      94.0,
+      257.5615236
+     ],
+     "box": [
+      68.0,
+      244.5615236,
+      539.2756,
+      266.75
+     ],
+     "size": 13.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.11,
+      0.23,
+      0.42
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 68,
+     "baseline": 256.0,
+     "angle": 0.0,
+     "translation": "Specifications",
+     "render_size": 13.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-8",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "項目",
+     "bbox": [
+      121.0,
+      276.70117200000004,
+      141.0,
+      286.70117200000004
+     ],
+     "box": [
+      59.0,
+      272.0,
+      203.0,
+      292.0
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 27,
+     "baseline": 285.5,
+     "angle": 0.0,
+     "translation": "Item",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-9",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "SakuraScan Pro",
+     "bbox": [
+      248.5,
+      276.70117200000004,
+      318.5,
+      286.70117200000004
+     ],
+     "box": [
+      209.0,
+      272.0,
+      358.0,
+      292.0
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 28,
+     "baseline": 285.5,
+     "angle": 0.0,
+     "translation": "SakuraScan Pro",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-10",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "SakuraScan Lite",
+     "bbox": [
+      401.0,
+      276.70117200000004,
+      476.0,
+      286.70117200000004
+     ],
+     "box": [
+      364.0,
+      272.0,
+      513.0,
+      292.0
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 28,
+     "baseline": 285.5,
+     "angle": 0.0,
+     "translation": "SakuraScan Lite",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-11",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "読取速度",
+     "bbox": [
+      62.0,
+      300.70117200000004,
+      102.0,
+      310.70117200000004
+     ],
+     "box": [
+      62.0,
+      296.0,
+      203.0,
+      316.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 26,
+     "baseline": 309.5,
+     "angle": 0.0,
+     "translation": "Scan speed",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-12",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "60枚/分",
+     "bbox": [
+      266.0,
+      300.70117200000004,
+      301.0,
+      310.70117200000004
+     ],
+     "box": [
+      209.0,
+      296.0,
+      358.0,
+      316.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 28,
+     "baseline": 309.5,
+     "angle": 0.0,
+     "translation": "60 pages/min",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-13",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "30枚/分",
+     "bbox": [
+      421.0,
+      300.70117200000004,
+      456.0,
+      310.70117200000004
+     ],
+     "box": [
+      364.0,
+      296.0,
+      513.0,
+      316.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 28,
+     "baseline": 309.5,
+     "angle": 0.0,
+     "translation": "30 pages/min",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-14",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "最大用紙サイズ",
+     "bbox": [
+      62.0,
+      324.70117200000004,
+      132.0,
+      334.70117200000004
+     ],
+     "box": [
+      62.0,
+      320.00000000000006,
+      203.0,
+      340.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 26,
+     "baseline": 333.5,
+     "angle": 0.0,
+     "translation": "Max. paper size",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-15",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "A3",
+     "bbox": [
+      278.5,
+      324.70117200000004,
+      288.5,
+      334.70117200000004
+     ],
+     "box": [
+      209.0,
+      320.00000000000006,
+      358.0,
+      340.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 28,
+     "baseline": 333.5,
+     "angle": 0.0,
+     "translation": "A3",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-16",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "A4",
+     "bbox": [
+      433.5,
+      324.70117200000004,
+      443.5,
+      334.70117200000004
+     ],
+     "box": [
+      364.0,
+      320.00000000000006,
+      513.0,
+      340.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 28,
+     "baseline": 333.5,
+     "angle": 0.0,
+     "translation": "A4",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-17",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "標準価格（税別）",
+     "bbox": [
+      62.0,
+      348.70117200000004,
+      142.0,
+      358.70117200000004
+     ],
+     "box": [
+      62.0,
+      344.00000000000006,
+      203.0,
+      364.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 26,
+     "baseline": 357.5,
+     "angle": 0.0,
+     "translation": "List price (excl. tax)",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-18",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "¥128,000",
+     "bbox": [
+      261.0,
+      348.70117200000004,
+      306.0,
+      358.70117200000004
+     ],
+     "box": [
+      209.0,
+      344.00000000000006,
+      358.0,
+      364.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 28,
+     "baseline": 357.5,
+     "angle": 0.0,
+     "translation": "¥128,000",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-19",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "¥68,000",
+     "bbox": [
+      418.5,
+      348.70117200000004,
+      458.5,
+      358.70117200000004
+     ],
+     "box": [
+      364.0,
+      344.00000000000006,
+      513.0,
+      364.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 28,
+     "baseline": 357.5,
+     "angle": 0.0,
+     "translation": "¥68,000",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-20",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "保証期間",
+     "bbox": [
+      62.0,
+      372.70117200000004,
+      102.0,
+      382.70117200000004
+     ],
+     "box": [
+      62.0,
+      368.00000000000006,
+      203.0,
+      388.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 26,
+     "baseline": 381.5,
+     "angle": 0.0,
+     "translation": "Warranty",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-21",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "3年",
+     "bbox": [
+      276.0,
+      372.70117200000004,
+      291.0,
+      382.70117200000004
+     ],
+     "box": [
+      209.0,
+      368.00000000000006,
+      358.0,
+      388.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 28,
+     "baseline": 381.5,
+     "angle": 0.0,
+     "translation": "3 years",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-22",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "1年",
+     "bbox": [
+      431.0,
+      372.70117200000004,
+      446.0,
+      382.70117200000004
+     ],
+     "box": [
+      364.0,
+      368.00000000000006,
+      513.0,
+      388.00000000000006
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 28,
+     "baseline": 381.5,
+     "angle": 0.0,
+     "translation": "1 year",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-23",
+     "page": 1,
+     "kind": "line",
+     "text": "処理速度の比較（枚/分）",
+     "bbox": [
+      56.0,
+      482.21108920000006,
+      182.5,
+      493.21108920000006
+     ],
+     "box": [
+      56.0,
+      482.21108920000006,
+      539.2756,
+      504.340972
+     ],
+     "size": 11.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.11,
+      0.23,
+      0.42
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 83,
+     "baseline": 491.89,
+     "angle": 0.0,
+     "translation": "Processing Speed Comparison (pages/min)",
+     "render_size": 11.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-24",
+     "page": 1,
+     "kind": "line",
+     "text": "60",
+     "bbox": [
+      161.0,
+      507.090972,
+      171.0,
+      517.090972
+     ],
+     "box": [
+      161.0,
+      507.090972,
+      539.2756,
+      519.3898
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": false,
+     "max_chars": 71,
+     "baseline": 515.89,
+     "angle": 0.0,
+     "translation": "60",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-25",
+     "page": 1,
+     "kind": "vertical",
+     "text": "期間限定価格",
+     "bbox": [
+      509.2756,
+      555.5714408000001,
+      523.2755999999999,
+      669.5714408
+     ],
+     "box": [
+      507.6756,
+      555.5714408000001,
+      524.8756,
+      688.3898
+     ],
+     "size": 14.0,
+     "leading": 1.2,
+     "lines": 6,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.85,
+      0.33,
+      0.52
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 18,
+     "baseline": null,
+     "angle": 0.0,
+     "translation": "Limited-time price",
+     "render_size": 14.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-26",
+     "page": 1,
+     "kind": "line",
+     "text": "30",
+     "bbox": [
+      271.0,
+      567.090972,
+      281.0,
+      577.090972
+     ],
+     "box": [
+      202.0,
+      567.090972,
+      350.0,
+      579.3898
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 28,
+     "baseline": 575.89,
+     "angle": 0.0,
+     "translation": "30",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-27",
+     "page": 1,
+     "kind": "line",
+     "text": "Pro",
+     "bbox": [
+      158.5,
+      649.090972,
+      173.5,
+      659.0909720000001
+     ],
+     "box": [
+      158.5,
+      649.090972,
+      260.0,
+      821.8898
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": false,
+     "max_chars": 269,
+     "baseline": 657.89,
+     "angle": 0.0,
+     "translation": "Pro",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-28",
+     "page": 1,
+     "kind": "line",
+     "text": "Lite",
+     "bbox": [
+      266.0,
+      649.090972,
+      286.0,
+      659.0909720000001
+     ],
+     "box": [
+      179.5,
+      649.090972,
+      372.5,
+      791.4708548000001
+     ],
+     "size": 10.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 440,
+     "baseline": 657.89,
+     "angle": 0.0,
+     "translation": "Lite",
+     "render_size": 10.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-29",
+     "page": 1,
+     "kind": "line",
+     "text": "- 2 -",
+     "bbox": [
+      286.3878,
+      793.9708548000001,
+      308.8878,
+      802.9708548
+     ],
+     "box": [
+      56.0,
+      793.9708548000001,
+      539.2756,
+      821.8898
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 204,
+     "baseline": 801.89,
+     "angle": 0.0,
+     "translation": "- 2 -",
+     "render_size": 9.0,
+     "overflow": false
+    }
+   ]
+  }
+ ]
+}

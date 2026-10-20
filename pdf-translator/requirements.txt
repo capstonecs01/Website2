@@ -1,0 +1,7 @@
+anthropic>=0.70     # Claude API; keep it up to date for structured outputs
+pdfplumber>=0.11    # reads the text layer with positions (MIT)
+pikepdf>=8.0        # removes the original text, merges the new layer (MPL-2.0)
+reportlab>=4.0      # draws the translated text (BSD)
+pypdfium2>=4.0      # renders page images for Claude to look at (Apache/BSD)
+Pillow>=10.0
+flask>=3.0          # only for examples/flask_app.py

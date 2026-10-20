@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #0E1116;
+  --bg-panel: #151A22;
+  --line: #232A35;
+  --text: #E7E9ED;
+  --text-muted: #8B94A3;
+  --signal: #FFB020;
+  --connect: #4FD1C5;
+  color-scheme: dark;
+}
+
+/* Light mode — toggled by setting data-theme="light" on <html>.
+   Only the tokens change; every component reads these variables, so the whole
+   UI flips. Accents are deepened a little so they stay readable on white. */
+:root[data-theme="light"] {
+  --bg: #F6F8FB;
+  --bg-panel: #FFFFFF;
+  --line: #E3E8EF;
+  --text: #1A1F28;
+  --text-muted: #5B6675;
+  --signal: #C77F00;
+  --connect: #0E8C80;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-mono-display { font-family: 'IBM Plex Mono', monospace; }
+
+::selection { background: var(--signal); color: #0E1116; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

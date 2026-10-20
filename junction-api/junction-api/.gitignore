@@ -1,0 +1,4 @@
+node_modules/
+.env
+junction.db
+junction.db-*

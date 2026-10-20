@@ -1,0 +1,5590 @@
+{
+ "source_path": "C:\\Capstone2026\\pdf-translator\\samples\\NOV151203.pdf",
+ "options": {
+  "source_lang": "English",
+  "target_lang": "Japanese",
+  "analysis_model": "claude-opus-5-5",
+  "translate_model": "claude-sonnet-5-5",
+  "review_model": "claude-opus-5-5",
+  "review": false,
+  "review_autofix": true,
+  "extra_instructions": "",
+  "glossary": {},
+  "max_workers": 4,
+  "max_analysis_pages": 100,
+  "font_dir": null,
+  "min_font_scale": 0.55
+ },
+ "brief": {
+  "document_type": "Peer-reviewed biomedical research article (short original paper) published in an open-access journal, International Journal of Science and Research (IJSR), Vol. 4 Issue 11, November 2015, pp. 1516–1519.",
+  "summary": "The paper reports a small intervention study in 30 healthy Nigerian adults who drank 330 ml of table water, regular Coke or Coke Zero daily, with blood glucose, serum lipid profile (total cholesterol, TG, HDL-C, LDL-C) and serum AST/ALT measured before and after. It concludes that regular Coke raised blood glucose and that both drinks worsened lipid parameters and raised AST, suggesting a predisposition to diabetes, atherosclerosis and mild organ toxicity. Its purpose is to report these findings to the scientific and health community.",
+  "audience": "Original: researchers, clinical/medical laboratory scientists, nutrition and public-health professionals reading an English-language international journal. Translation: Japanese researchers, clinical laboratory technologists (臨床検査技師), physicians, dietitians and students of medicine/nutrition who read Japanese academic papers (学術論文).",
+  "source_tone": "Formal academic scientific English, impersonal and mostly passive, with standard IMRaD structure. The prose is somewhat non-native and contains typos and inconsistencies (e.g. 'HLD-cholesterol', 'Vartanionet al.', 4 days vs 5 days, p<0.005 vs p<0.05, 'subject T-distribution test'). Claims are hedged ('may reflect', 'could be suggestive') but the conclusions are fairly assertive.",
+  "target_style": "Standard Japanese scientific paper style in である調 (plain/dearu form), as in 日本臨床検査医学会 or 栄養学 journals. Use concise, impersonal sentences ('〜を検討した', '〜が認められた', '〜と考えられる', '〜が示唆された'). Keep the hedging levels of the source: 'may/could' → '可能性がある/示唆される'; 'significantly' → '有意に'. Translate faithfully, including the source's inconsistencies (e.g. 4 days in the abstract vs 5 days in methods; p<0.005 in Statistical Analysis): do not silently correct them. Obvious typos with no meaning change (HLD→HDL, 'Vartanionet'→'Vartanion et') may be normalized. Keep two-column layout, headers, footers, tables and section numbering identical.",
+  "conventions": [
+   "Section headings: 'Abstract' → '要旨'; 'Keywords' → 'キーワード'; '1. Introduction' → '1. 緒言'; '2. Materials and Methods' → '2. 材料および方法'; '3. Results' → '3. 結果'; '4. Discussion' → '4. 考察'; '5. Conclusion' → '5. 結論'; '6. Acknowledgement' → '6. 謝辞'; 'References' → '参考文献'.",
+   "Run-in subheadings in Methods keep bold style followed by full-width colon: 'Coca cola Soft Drinks:' → 'コカ・コーラ清涼飲料：'; 'Study Participants:' → '被験者：'; 'Study Design:' → '試験デザイン：'; 'Blood Test:' → '血液検査：'; 'Statistical Analysis:' → '統計解析：'.",
+   "Table captions: 'Table 1:' → '表1：' etc.; refer to tables in text as '表1', '表2', '表3'.",
+   "Numbers: keep Arabic numerals and decimal points exactly as in source (e.g. 3.94 ± 0.52). Do not round or alter values. Use half-width digits and symbols.",
+   "Units: keep SI/lab units in Latin script with half-width characters: ml, mmol/L, IU/L, rpm, kg/m² (render 24.8kgm-2 as 24.8 kg/m²), °C (render '2 to 40C' as '2～4°C'). '12-ounce' → '12オンス（約355 ml）'; keep 'calories' as 'kcal' or 'キロカロリー' ('140 calories' → '140 kcal').",
+   "Ranges: use full-width wave dash '～' (e.g. '20～45歳', '19.5～24.8 kg/m²', '2～4°C'). In references, keep page ranges with en dash as in source (e.g. 134–147).",
+   "Statistics: keep 'p < 0.05', 'p > 0.05', 'p < 0.005' as written in italic p with half-width symbols; 'mean ± SEM' → '平均値 ± 標準誤差（SEM）'; 'student t-distribution test' → 'Student の t 検定'; 'statistically significant' → '統計学的に有意'; 'non-significant' → '有意差なし/有意でない'.",
+   "Dates: 'February, 2014' → '2014年2月'; 'November 2015' in the running footer → keep as in source journal formatting (see keep_as_is) but in body text use '2015年11月'. 'in the 1960' → '1960年代'.",
+   "In-text citations: keep author names in Latin script with year in the original format, e.g. '（Gibson, 2008）', '（Yoshida et al., 2007）', using full-width parentheses around half-width content; keep 'et al.' in Latin.",
+   "Reference list: do not translate; reproduce entries [1]–[10] exactly in the original English (titles, journal names, volumes, pages), preserving italics.",
+   "Author names in the byline: keep in Latin script (A. E. Ben-Chioma, D. G. Tamuno-Emine, A. S. Jack) with superscript numbers; do not render in katakana.",
+   "Day labels in tables: 'Before (Day 1)' → '投与前（1日目）'; 'After (Day 5)' → '投与後（5日目）'; 'Day' column header → '日'; values 0 and 5 unchanged.",
+   "Group names: 'Group 1/Group II/Group III' → '第1群／第II群／第III群' preserving the source's mixed numerals; 'regular coke fed group' → 'レギュラーコーク摂取群'; 'water fed group' → '水摂取群'.",
+   "Superscript letters (a, b, c … n) on table values stay as half-width superscript Latin letters; footnote 'Means with different superscripts … differed significantly' → '異なる上付き文字を付した平均値間には有意差がある（p < 0.05）'.",
+   "Abbreviations on first use: Japanese term followed by English abbreviation in parentheses, e.g. 'アスパラギン酸アミノトランスフェラーゼ（AST）'; thereafter use AST/ALT/HDL/LDL/TG/BMI/SEM.",
+   "Punctuation: use Japanese '、' and '。' in body text; full-width parentheses （） around Japanese text; half-width for formulas and numeric expressions.",
+   "Formula: 'LDL-cholesterol = Total cholesterol – (HDL Cholesterol + 0.46 x triglycerides) (All in mmol/L)' → 'LDL コレステロール ＝ 総コレステロール －（HDL コレステロール ＋ 0.46 × トリグリセリド）（単位はすべて mmol/L）'.",
+   "Acknowledgement person name 'Happiness Michael' kept in Latin script; 'good secretarial work' → '秘書業務'.",
+   "Running header/footer lines (journal name, ISSN, Index Copernicus Value, Impact Factor, Volume/Issue, URL, licence line, Paper ID, page numbers 1516–1519) stay unchanged in English in place."
+  ],
+  "glossary": [
+   {
+    "source": "Regular coke",
+    "target": "レギュラーコーク",
+    "note": "Product variant; use consistently, including table rows. Capitalization in source varies—ignore."
+   },
+   {
+    "source": "Coke zero / Coke Zero",
+    "target": "コカ・コーラ ゼロ",
+    "note": "Official Japanese product name; use everywhere incl. tables and title."
+   },
+   {
+    "source": "Coca-cola / coca cola",
+    "target": "コカ・コーラ",
+    "note": "Beverage name."
+   },
+   {
+    "source": "The coca-cola company",
+    "target": "ザ コカ・コーラ カンパニー",
+    "note": "Company name."
+   },
+   {
+    "source": "coke (colloquial)",
+    "target": "コーク",
+    "note": "'usually shortened to “coke”' → '一般に「コーク」と略称される'."
+   },
+   {
+    "source": "two brands of coke / two coke products",
+    "target": "2種類のコーク製品",
+    "note": ""
+   },
+   {
+    "source": "Eva premium table water",
+    "target": "Eva プレミアム テーブルウォーター",
+    "note": "Keep brand 'Eva' in Latin script."
+   },
+   {
+    "source": "Nigerian Bottling Company",
+    "target": "Nigerian Bottling Company（ナイジェリア・ボトリング社）",
+    "note": "Keep English name, gloss in parentheses on first mention."
+   },
+   {
+    "source": "Randox Laboratories, UK",
+    "target": "Randox Laboratories社（英国）",
+    "note": "Kit supplier; same rendering every time."
+   },
+   {
+    "source": "Rivers State University of Science and Technology, Port Harcourt",
+    "target": "Rivers State University of Science and Technology（ナイジェリア、ポートハーコート）",
+    "note": "Affiliation; keep institution name in English. Department → 'Department of Medical Laboratory Science（医療臨床検査学科）'."
+   },
+   {
+    "source": "Port Harcourt, Nigeria",
+    "target": "ナイジェリア、ポートハーコート",
+    "note": "Place name in body text."
+   },
+   {
+    "source": "Nigerian National Expert Committee on non-communicable diseases",
+    "target": "ナイジェリア国家非感染性疾患専門委員会",
+    "note": ""
+   },
+   {
+    "source": "healthy human subjects",
+    "target": "健常被験者",
+    "note": ""
+   },
+   {
+    "source": "blood glucose concentration",
+    "target": "血糖値",
+    "note": "'plasma glucose' → '血漿グルコース濃度'; 'fasting blood glucose' → '空腹時血糖値'."
+   },
+   {
+    "source": "serum lipid profile",
+    "target": "血清脂質プロファイル",
+    "note": ""
+   },
+   {
+    "source": "serum aminotransferases",
+    "target": "血清アミノトランスフェラーゼ",
+    "note": ""
+   },
+   {
+    "source": "aspartate aminotransferase (AST)",
+    "target": "アスパラギン酸アミノトランスフェラーゼ（AST）",
+    "note": ""
+   },
+   {
+    "source": "alanine aminotransferase (ALT)",
+    "target": "アラニンアミノトランスフェラーゼ（ALT）",
+    "note": ""
+   },
+   {
+    "source": "total cholesterol (Total chol.)",
+    "target": "総コレステロール（TC）",
+    "note": "Table header 'Total chol.' → '総コレステロール'."
+   },
+   {
+    "source": "triglycerides (TG)",
+    "target": "トリグリセリド（TG）",
+    "note": "Use トリグリセリド, not 中性脂肪."
+   },
+   {
+    "source": "high density lipoprotein (HDL) cholesterol",
+    "target": "HDL コレステロール（高比重リポタンパクコレステロール）",
+    "note": "Full form on first use, then 'HDL コレステロール'. Table header 'HDL-Chol' → 'HDL-C'."
+   },
+   {
+    "source": "low density lipoprotein (LDL) cholesterol",
+    "target": "LDL コレステロール（低比重リポタンパクコレステロール）",
+    "note": "Then 'LDL コレステロール'; table header 'LDL-chol' → 'LDL-C'."
+   },
+   {
+    "source": "diabetes mellitus",
+    "target": "糖尿病",
+    "note": "'type-2 diabetes' → '2型糖尿病'."
+   },
+   {
+    "source": "atherosclerosis",
+    "target": "アテローム性動脈硬化症",
+    "note": ""
+   },
+   {
+    "source": "cardiovascular disease",
+    "target": "心血管疾患",
+    "note": ""
+   },
+   {
+    "source": "hyperglycaemia / glycosuria",
+    "target": "高血糖／糖尿",
+    "note": ""
+   },
+   {
+    "source": "hepatic dysfunction",
+    "target": "肝機能障害",
+    "note": ""
+   },
+   {
+    "source": "hepatocellular damage",
+    "target": "肝細胞障害",
+    "note": ""
+   },
+   {
+    "source": "hepatotoxic agents",
+    "target": "肝毒性物質",
+    "note": ""
+   },
+   {
+    "source": "hepatocytes",
+    "target": "肝細胞",
+    "note": ""
+   },
+   {
+    "source": "cytosol",
+    "target": "細胞質ゾル",
+    "note": ""
+   },
+   {
+    "source": "predisposure / predispose / predisposing factor",
+    "target": "罹患しやすさ／罹患しやすくする／素因",
+    "note": "Keyword 'Predisposing factor' → '素因'."
+   },
+   {
+    "source": "insulin resistance",
+    "target": "インスリン抵抗性",
+    "note": ""
+   },
+   {
+    "source": "metabolic syndrome",
+    "target": "メタボリックシンドローム",
+    "note": ""
+   },
+   {
+    "source": "fatty liver disease",
+    "target": "脂肪肝",
+    "note": ""
+   },
+   {
+    "source": "sugar-sweetened soft drinks / beverages",
+    "target": "加糖清涼飲料",
+    "note": ""
+   },
+   {
+    "source": "high fructose corn syrup",
+    "target": "高果糖コーンシロップ",
+    "note": ""
+   },
+   {
+    "source": "sucrose",
+    "target": "スクロース",
+    "note": ""
+   },
+   {
+    "source": "aspartame",
+    "target": "アスパルテーム",
+    "note": ""
+   },
+   {
+    "source": "sodium fluoride anticoagulant",
+    "target": "フッ化ナトリウム含有抗凝固剤",
+    "note": ""
+   },
+   {
+    "source": "Plain tubes",
+    "target": "プレーン管（添加剤なし採血管）",
+    "note": ""
+   },
+   {
+    "source": "Pasteur pipette",
+    "target": "パスツールピペット",
+    "note": ""
+   },
+   {
+    "source": "centrifuging at 3000rpm",
+    "target": "3000 rpm で遠心分離",
+    "note": ""
+   },
+   {
+    "source": "body mass index (BMI)",
+    "target": "体格指数（BMI）",
+    "note": ""
+   },
+   {
+    "source": "glucose-lowering medications",
+    "target": "血糖降下薬",
+    "note": ""
+   },
+   {
+    "source": "pre-treatment / post-treatment value",
+    "target": "投与前値／投与後値",
+    "note": ""
+   },
+   {
+    "source": "test material",
+    "target": "試験飲料",
+    "note": ""
+   },
+   {
+    "source": "Group fed",
+    "target": "摂取群",
+    "note": "Table column header."
+   },
+   {
+    "source": "Serum activity (IU/L)",
+    "target": "血清活性（IU/L）",
+    "note": "Table 2 header."
+   },
+   {
+    "source": "Serum lipid concentrations (mmol/L)",
+    "target": "血清脂質濃度（mmol/L）",
+    "note": "Table 3 header."
+   },
+   {
+    "source": "Water",
+    "target": "水",
+    "note": "Table row label."
+   },
+   {
+    "source": "westernization",
+    "target": "食生活の西洋化",
+    "note": ""
+   }
+  ],
+  "keep_as_is": [
+   "International Journal of Science and Research (IJSR)",
+   "ISSN (Online): 2319-7064",
+   "Index Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+   "Volume 4 Issue 11, November 2015",
+   "www.ijsr.net",
+   "Licensed Under Creative Commons Attribution CC BY",
+   "Paper ID: NOV151203",
+   "Page numbers 1516, 1517, 1518, 1519",
+   "IJSR watermark/logo and seal",
+   "A. E. Ben-Chioma, D. G. Tamuno-Emine, A. S. Jack",
+   "Happiness Michael",
+   "Eva",
+   "Randox Laboratories",
+   "All reference entries [1]–[10] in full, including author names, titles, journal names (e.g. Phytother Res., Nutrition Research Reviews, British Medical Journal, Hormones, Nutrients, Journal of Biological Chemistry, American Journal of Public Health, Journal of Clinical Nutrition), volume/issue/page numbers",
+   "In-text citation author names and 'et al.'",
+   "Abbreviations AST, ALT, HDL, LDL, TG, BMI, SEM, IU/L, mmol/L, rpm",
+   "Statistical expressions p < 0.05, p > 0.05, p < 0.005",
+   "All numeric data values and superscript letters a–n in tables",
+   "Ca2+ (in reference [6])"
+  ]
+ },
+ "review": [],
+ "warnings": [],
+ "usage": {
+  "by_model": {
+   "claude-opus-5-5": {
+    "calls": 1,
+    "input": 14811,
+    "output": 5287,
+    "cache_write": 0,
+    "cache_read": 0
+   },
+   "claude-sonnet-5-5": {
+    "calls": 10,
+    "input": 33298,
+    "output": 11733,
+    "cache_write": 23964,
+    "cache_read": 35946
+   }
+  },
+  "estimated_cost_usd": 0.416
+ },
+ "detection": {
+  "language": "English",
+  "japanese_share": 0.0,
+  "latin_share": 1.0,
+  "counts": {
+   "kana": 0,
+   "kanji": 0,
+   "latin": 13222,
+   "hangul": 0,
+   "other": 0
+  },
+  "pages_checked": 4,
+  "reason": "mostly Latin letters"
+ },
+ "pages": [
+  {
+   "index": 0,
+   "width": 595.32,
+   "height": 841.92,
+   "rotation": 0,
+   "status": "ok",
+   "note": "",
+   "segments": [
+    {
+     "id": "p1-1",
+     "page": 0,
+     "kind": "heading",
+     "text": "International Journal of Science and Research (IJSR)",
+     "bbox": [
+      164.3,
+      8.831999999999994,
+      438.788,
+      20.831999999999994
+     ],
+     "box": [
+      48.239999999999924,
+      8.831999999999994,
+      554.8480000000001,
+      20.831999999999994
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 40,
+     "baseline": 18.24,
+     "angle": 0.0,
+     "translation": "International Journal of Science and Research (IJSR)",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-2",
+     "page": 0,
+     "kind": "line",
+     "text": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "bbox": [
+      160.70000000000002,
+      22.43136000000004,
+      442.4186000000001,
+      43.911359999999945
+     ],
+     "box": [
+      48.239999999999924,
+      22.43136000000004,
+      554.8786000000002,
+      43.911359999999945
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 2,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 96,
+     "baseline": 30.24,
+     "angle": 0.0,
+     "translation": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p1-3",
+     "page": 0,
+     "kind": "heading",
+     "text": "Effects of Regular Coke and Coke Zero on Blood\nGlucose, Serum Lipid Profile and Activities of\nSerum Aminotransferases in Healthy Human\nSubjects",
+     "bbox": [
+      63.624,
+      53.663999999999874,
+      539.616,
+      160.48399999999992
+     ],
+     "box": [
+      48.239999999999924,
+      53.663999999999874,
+      555.0000000000001,
+      167.88464
+     ],
+     "size": 24.0,
+     "leading": 1.15,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 80,
+     "baseline": 72.48,
+     "angle": 0.0,
+     "translation": "レギュラーコークおよびコカ・コーラ ゼロが\n健常被験者の血糖値、血清脂質プロファイルおよび\n血清アミノトランスフェラーゼ活性に及ぼす影響",
+     "render_size": 22.56,
+     "overflow": false
+    },
+    {
+     "id": "p1-4",
+     "page": 0,
+     "kind": "line",
+     "text": "A. E. Ben-Chioma<sup>1</sup>, D. G. Tamuno-Emine<sup>2</sup>, A. S. Jack<sup>3</sup>",
+     "bbox": [
+      173.78000000000003,
+      173.88464,
+      429.46000000000004,
+      184.92463999999995
+     ],
+     "box": [
+      48.239999999999924,
+      173.88464,
+      555.0000000000001,
+      193.60399999999993
+     ],
+     "size": 11.04,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 43,
+     "baseline": 182.54,
+     "angle": 0.0,
+     "translation": "A. E. Ben-Chioma<sup>1</sup>, D. G. Tamuno-Emine<sup>2</sup>, A. S. Jack<sup>3</sup>",
+     "render_size": 11.04,
+     "overflow": false
+    },
+    {
+     "id": "p1-5",
+     "page": 0,
+     "kind": "line",
+     "text": "Department of Medical Laboratory Science, Rivers State University of Science and Technology, Port Harcourt",
+     "bbox": [
+      102.14000000000004,
+      196.36399999999992,
+      501.2950000000001,
+      205.36399999999992
+     ],
+     "box": [
+      48.239999999999924,
+      196.36399999999992,
+      555.1950000000002,
+      225.52135999999996
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 107,
+     "baseline": 203.42,
+     "angle": 0.0,
+     "translation": "Department of Medical Laboratory Science（医療臨床検査学科）, Rivers State University of Science and Technology（ナイジェリア、ポートハーコート）",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-6",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Abstract: Regular coke and Coke zero were investigated for possible effects on blood glucose concentration, serum lipid profile and activities of serum aminotransferases (AST and ALT) of healthy human subjects. Different groups of the human subjects were fed Eva premium table water (330ml), regular coke (330ml) or coke zero (330ml) each day for 4 days. Results obtained showed that regular coke fed group exhibited significantly high blood glucose concentration (p < 0.05) while coke zero and water fed groups showed no significant difference (p> 0.05). Also both regular coke and coke zero showed a decrease in serum high density lipoprotein cholesterol concentration (p< 0.05), an increase in serum total cholesterol concentration, low density lipoprotein cholesterol concentration and AST activity (p< 0.05), and a statistically non-significant effect (p> 0.05) on serum ALT activity and triglycerides. Blood glucose concentration is a marker of diabetes mellitus while a rise in the activities of AST and ALT in the bloodstream gives an indication of failure of vital organs such as the heart and liver. Abnormal lipid profile parameters gives an indication of predisposure to cardiovascular diseases such as atherosclerosis. From the findings of this study, it can be concluded that high intake of regular coke and coke zero can predispose one to some diseases, notably organ failure, diabetes mellitus and atherosclerosis.",
+     "bbox": [
+      48.24000000000001,
+      227.77135999999996,
+      555.2620000000001,
+      341.35400000000004
+     ],
+     "box": [
+      48.24000000000001,
+      227.77135999999996,
+      555.2620000000001,
+      351.79135999999994
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 11,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 588,
+     "baseline": 235.58,
+     "angle": 0.0,
+     "translation": "要旨：レギュラーコークおよびコカ・コーラ ゼロが、健常被験者の血糖値、血清脂質プロファイル、血清アミノトランスフェラーゼ（AST および ALT）活性に及ぼす影響を検討した。被験者を群に分け、Eva プレミアム テーブルウォーター（330 ml）、レギュラーコーク（330 ml）またはコカ・コーラ ゼロ（330 ml）を1日1回、4日間摂取させた。その結果、レギュラーコーク摂取群では血糖値が有意に高値を示した（p < 0.05）が、コカ・コーラ ゼロ摂取群と水摂取群では有意差は認められなかった（p > 0.05）。また、レギュラーコークとコカ・コーラ ゼロはいずれも、血清 HDL コレステロール（高比重リポタンパクコレステロール）濃度の低下（p < 0.05）、血清総コレステロール濃度、LDL コレステロール（低比重リポタンパクコレステロール）濃度および AST 活性の上昇（p < 0.05）を示したが、血清 ALT 活性とトリグリセリドへの影響は統計学的に有意でなかった（p > 0.05）。血糖値は糖尿病の指標であり、血中の AST・ALT 活性の上昇は心臓や肝臓などの重要臓器の障害を示唆する。脂質プロファイルの異常は、アテローム性動脈硬化症などの心血管疾患への罹患しやすさを示す。本研究の結果から、レギュラーコークおよびコカ・コーラ ゼロの多量摂取は、臓器障害、糖尿病、アテローム性動脈硬化症などの疾患に罹患しやすくする可能性があると結論される。",
+     "render_size": 8.46,
+     "overflow": false
+    },
+    {
+     "id": "p1-7",
+     "page": 0,
+     "kind": "line",
+     "text": "Keywords: Regular coke, Coke zero, Blood glucose, Serum aminotransferases, Predisposing factor, Human subjects.",
+     "bbox": [
+      48.240000000000066,
+      354.04135999999994,
+      476.06100000000004,
+      364.00136
+     ],
+     "box": [
+      48.240000000000066,
+      354.04135999999994,
+      555.3,
+      374.8313599999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 107,
+     "baseline": 361.85,
+     "angle": 0.0,
+     "translation": "キーワード：レギュラーコーク、コカ・コーラ ゼロ、血糖値、血清アミノトランスフェラーゼ、素因、健常被験者",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-8",
+     "page": 0,
+     "kind": "heading",
+     "text": "1. Introduction",
+     "bbox": [
+      48.24000000000006,
+      377.52199999999993,
+      127.15199999999999,
+      389.52199999999993
+     ],
+     "box": [
+      48.24000000000006,
+      377.52199999999993,
+      141.6300018,
+      399.4213599999999
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 7,
+     "baseline": 386.93,
+     "angle": 0.0,
+     "translation": "1. 緒言",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-9",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "of giving water to a visitor is now being replaced with sweetened soft drinks like regular coke and coke zero, hence the need to assess the effects of these two coca cola brands on blood glucose concentration, serum lipid profile and the activities of serum aminotransferases, which are some of the several biochemical markers that can give valuable information about predisposure to diabetes mellitus, cardiovascular disease and hepatic dysfunction.",
+     "bbox": [
+      310.6299999999999,
+      377.0813599999999,
+      555.2587599999999,
+      467.58135999999985
+     ],
+     "box": [
+      310.6299999999999,
+      377.0813599999999,
+      555.2587599999999,
+      478.4919999999998
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 8,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 186,
+     "baseline": 384.89,
+     "angle": 0.0,
+     "translation": "客に水を出す習慣は、現在ではレギュラーコークやコカ・コーラ ゼロなどの加糖清涼飲料に取って代わられつつある。そのため、これら2種類のコカ・コーラ製品が、血糖値、血清脂質プロファイル、血清アミノトランスフェラーゼ活性に及ぼす影響を評価する必要がある。これらはいずれも、糖尿病、心血管疾患、肝機能障害への罹患しやすさに関する有用な情報をもたらしうる生化学的指標である。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p1-10",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Coca-cola is a soft drink which is a sweetened water-based non-alcoholic beverage with balanced acidity (Vartanionet al., 2007). The coca-cola company manufactures several variations of coca-cola beverages usually shortened to “coke” by the general public. One of the most common version is the regular coke, but the company also makes flavoured variations and a non-calorie version coke zero (Richard, 2012).",
+     "bbox": [
+      48.239999999999924,
+      402.4213599999999,
+      292.8233999999999,
+      492.7813599999998
+     ],
+     "box": [
+      48.239999999999924,
+      402.4213599999999,
+      292.8233999999999,
+      503.3713599999997
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 8,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 186,
+     "baseline": 410.23,
+     "angle": 0.0,
+     "translation": "コカ・コーラは、酸味のバランスを整えた甘味付きの水ベースのノンアルコール清涼飲料である（Vartanion et al., 2007）。ザ コカ・コーラ カンパニーは、コカ・コーラ飲料を数種類製造しており、一般に「コーク」と略称される。最も一般的な製品はレギュラーコークであるが、同社はフレーバー付き製品やノンカロリー製品のコカ・コーラ ゼロも製造している（Richard, 2012）。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p1-11",
+     "page": 0,
+     "kind": "heading",
+     "text": "2. Materials and Methods",
+     "bbox": [
+      310.6299999999999,
+      480.9819999999998,
+      443.422,
+      492.98199999999997
+     ],
+     "box": [
+      310.6299999999999,
+      480.9819999999998,
+      555.3,
+      502.86135999999993
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 19,
+     "baseline": 490.39,
+     "angle": 0.0,
+     "translation": "2. 材料および方法",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-12",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "The primary difference between Regular coke and Coke zero is the calorie and carbohydrate content. A 12-ounce serving of regular coke contain 140 calories and 39 grams of carbohydrate, while the same amount of coke zero contains no calories and no carbohydrate. This observation can be explained by the fact that coke zero is not made with sugar, which is what adds the calories and carbohydrate to regular coke.",
+     "bbox": [
+      48.239999999999924,
+      505.8613599999997,
+      292.88264000000004,
+      596.37136
+     ],
+     "box": [
+      48.239999999999924,
+      505.8613599999997,
+      292.88264000000004,
+      606.96136
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 8,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 186,
+     "baseline": 513.67,
+     "angle": 0.0,
+     "translation": "レギュラーコークとコカ・コーラ ゼロの主な違いは、エネルギー量と炭水化物含有量である。12オンス（約355 ml）あたり、レギュラーコークは140 kcal、炭水化物39 gを含むのに対し、同量のコカ・コーラ ゼロはエネルギーも炭水化物も含まない。これは、コカ・コーラ ゼロが、レギュラーコークにエネルギーと炭水化物をもたらす糖を用いずに製造されていることによると考えられる。",
+     "render_size": 9.36,
+     "overflow": false
+    },
+    {
+     "id": "p1-13",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Coca cola Soft Drinks: The coca cola soft drinks (regular coke and coke zero) used in this study were obtained from a soft drink vendor in Port Harcourt, Nigeria during February, 2014. Each can of soft drink was chilled at a temperature of 2 to 4<sup>0</sup>C in a refrigerator before administration.",
+     "bbox": [
+      310.63,
+      505.86135999999993,
+      555.22276,
+      561.8113599999999
+     ],
+     "box": [
+      310.63,
+      505.86135999999993,
+      555.22276,
+      572.4013599999998
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 5,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 116,
+     "baseline": 513.67,
+     "angle": 0.0,
+     "translation": "<b>コカ・コーラ清涼飲料：</b>本試験で用いたコカ・コーラ清涼飲料（レギュラーコークおよびコカ・コーラ ゼロ）は、2014年2月にナイジェリア、ポートハーコートの清涼飲料販売業者から入手した。各缶は、投与前に冷蔵庫内で2～4°Cに冷却した。",
+     "render_size": 9.66,
+     "overflow": false
+    },
+    {
+     "id": "p1-14",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Study Participants: Thirty (30) healthy human subjects were recruited for this study. The study protocol was carefully explained to each subject and consent was given to participant in the study. The subjects consisted of 20 males and 10 females aged 20 to 45 years, with body mass index (BMI) ranging from 19.5 to 24.8kgm<sup>-2</sup>. All the study participants had fasting blood glucose concentration less than 5.5 mmol/L and none was currently using glucose- lowering medications.",
+     "bbox": [
+      310.62999999999994,
+      574.8913599999998,
+      555.2774800000001,
+      676.8913600000001
+     ],
+     "box": [
+      310.62999999999994,
+      574.8913599999998,
+      555.2774800000001,
+      687.36136
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 9,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 210,
+     "baseline": 582.7,
+     "angle": 0.0,
+     "translation": "<b>被験者：</b>本試験には健常被験者30名を登録した。試験プロトコルを各被験者に丁寧に説明し、参加の同意を得た。被験者は男性20名、女性10名で、年齢は20～45歳、体格指数（BMI）は19.5～24.8 kg/m²であった。全被験者の空腹時血糖値は5.5 mmol/L未満であり、血糖降下薬を使用している者はいなかった。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p1-15",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Researchers have shown that high intake of sugar-sweetened soft drinks like coca cola can lead to increased risk of several disease states, including cardiovascular disease, obesity and type-2 diabetes (Gibson, 2008).",
+     "bbox": [
+      48.23999999999995,
+      609.45136,
+      292.9073999999997,
+      653.85136
+     ],
+     "box": [
+      48.23999999999995,
+      609.45136,
+      292.9073999999997,
+      664.44136
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 617.26,
+     "angle": 0.0,
+     "translation": "コカ・コーラなどの加糖清涼飲料を多量に摂取すると、心血管疾患、肥満、2型糖尿病をはじめ、さまざまな疾患の罹患リスクが高まる可能性が報告されている（Gibson, 2008）。",
+     "render_size": 9.66,
+     "overflow": false
+    },
+    {
+     "id": "p1-16",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Diabetes mellitus is a chronic disease characterized by persistent hyperglycaemia and glycosuria and is the most prominent disease related to failure of blood sugar regulation. The disease was found to be uncommon in the African continent in the 1960, but in 1992 the Nigerian National Expert Committee on non-communicable diseases discovered a high prevalence of the disease in urban of areas of Nigeria (Santaguidaet al., 2008).This was ascribed to gradual westernization, with an increase in the number of soft drinks manufacturing companies. The traditional habit",
+     "bbox": [
+      48.23999999999995,
+      666.93136,
+      292.91,
+      780.3513599999999
+     ],
+     "box": [
+      48.23999999999995,
+      666.93136,
+      292.91,
+      780.462
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 10,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 210,
+     "baseline": 674.74,
+     "angle": 0.0,
+     "translation": "糖尿病は、持続的な高血糖および糖尿を特徴とする慢性疾患であり、血糖調節の破綻に関連する最も代表的な疾患である。本疾患は1960年代にはアフリカ大陸ではまれであったが、1992年にナイジェリア国家非感染性疾患専門委員会が、ナイジェリアの都市部で本疾患の有病率が高いことを見いだした（Santaguida et al., 2008）。これは、食生活の西洋化が進み、清涼飲料製造会社が増加したことによるとされた。来客に水を出すという伝統的な習慣",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p1-17",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Study Design: The study participants fasted overnight and were divided into 3 groups, each group consisting of 10 persons.",
+     "bbox": [
+      310.62999999999994,
+      689.85136,
+      555.18,
+      722.87136
+     ],
+     "box": [
+      310.62999999999994,
+      689.85136,
+      555.18,
+      722.87136
+     ],
+     "size": 9.96,
+     "leading": 1.158,
+     "lines": 3,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 697.66,
+     "angle": 0.0,
+     "translation": "試験デザイン：被験者は一晩絶食し、各群10名からなる3群に分けた。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p1-18",
+     "page": 0,
+     "kind": "paragraph",
+     "text": "Group 1 participants were given to drink on an empty stomach 330ml Eva premium table water (produced by Nigerian Bottling Company) each day for 5 days.",
+     "bbox": [
+      310.63,
+      724.4313599999999,
+      555.3,
+      757.3113599999999
+     ],
+     "box": [
+      310.63,
+      724.4313599999999,
+      555.3,
+      780.462
+     ],
+     "size": 9.96,
+     "leading": 1.151,
+     "lines": 3,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 732.24,
+     "angle": 0.0,
+     "translation": "第1群の被験者には、空腹時に Eva プレミアム テーブルウォーター（Nigerian Bottling Company（ナイジェリア・ボトリング社）製）330 ml を1日1回、5日間飲用させた。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p1-19",
+     "page": 0,
+     "kind": "heading",
+     "text": "Volume 4 Issue 11, November 2015",
+     "bbox": [
+      211.97,
+      782.952,
+      391.058,
+      794.952
+     ],
+     "box": [
+      48.239999999999924,
+      782.952,
+      554.788,
+      794.952
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 40,
+     "baseline": 792.36,
+     "angle": 0.0,
+     "translation": "Volume 4 Issue 11, November 2015",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-20",
+     "page": 0,
+     "kind": "heading",
+     "text": "www.ijsr.net",
+     "bbox": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "box": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 806.16,
+     "angle": 0.0,
+     "translation": "www.ijsr.net",
+     "render_size": 9.84,
+     "overflow": false
+    },
+    {
+     "id": "p1-21",
+     "page": 0,
+     "kind": "line",
+     "text": "Paper ID: NOV151203",
+     "bbox": [
+      72.0,
+      806.6920488,
+      152.04,
+      814.6920488
+     ],
+     "box": [
+      72.0,
+      806.6920488,
+      185.44999999999996,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 13,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "Paper ID: NOV151203",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-22",
+     "page": 0,
+     "kind": "line",
+     "text": "1516",
+     "bbox": [
+      505.5230103,
+      806.6920488,
+      523.3150103,
+      814.6920488
+     ],
+     "box": [
+      505.5230103,
+      806.6920488,
+      555.3,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "1516",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p1-23",
+     "page": 0,
+     "kind": "line",
+     "text": "Licensed Under Creative Commons Attribution CC BY",
+     "bbox": [
+      190.24999999999997,
+      810.11136,
+      412.77631999999994,
+      820.0713599999999
+     ],
+     "box": [
+      158.016,
+      810.11136,
+      445.0103199999999,
+      820.0713599999999
+     ],
+     "size": 9.96,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 27,
+     "baseline": 817.92,
+     "angle": 0.0,
+     "translation": "Licensed Under Creative Commons Attribution CC BY",
+     "render_size": 9.96,
+     "overflow": false
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "width": 595.32,
+   "height": 841.92,
+   "rotation": 0,
+   "status": "ok",
+   "note": "",
+   "segments": [
+    {
+     "id": "p2-1",
+     "page": 1,
+     "kind": "heading",
+     "text": "International Journal of Science and Research (IJSR)",
+     "bbox": [
+      164.3,
+      8.831999999999994,
+      438.788,
+      20.831999999999994
+     ],
+     "box": [
+      48.239999999999895,
+      8.831999999999994,
+      554.8480000000002,
+      20.831999999999994
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 40,
+     "baseline": 18.24,
+     "angle": 0.0,
+     "translation": "International Journal of Science and Research (IJSR)",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-2",
+     "page": 1,
+     "kind": "line",
+     "text": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "bbox": [
+      160.70000000000002,
+      22.43136000000004,
+      442.4186000000001,
+      43.911359999999945
+     ],
+     "box": [
+      48.239999999999895,
+      22.43136000000004,
+      554.8786000000002,
+      43.911359999999945
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 2,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 96,
+     "baseline": 30.24,
+     "angle": 0.0,
+     "translation": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-3",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "Group II participants were given to drink 330ml regular coke first thing in the morning for 5 days.",
+     "bbox": [
+      48.24,
+      51.59136000000001,
+      292.76648000000006,
+      73.07135999999991
+     ],
+     "box": [
+      48.24,
+      51.59136000000001,
+      292.76648000000006,
+      83.56135999999994
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 59.4,
+     "angle": 0.0,
+     "translation": "第II群の被験者には、朝一番にレギュラーコーク330 mlを5日間摂取させた。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-4",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "Water, regular coke and coke zero respectively were not found to show any statistically significant difference (p> 0.05) in the activity of serum ALT when the treatment value of each group was compared with the post-treatment value.",
+     "bbox": [
+      310.62999999999994,
+      51.59136000000001,
+      555.2475999999998,
+      96.01135999999985
+     ],
+     "box": [
+      310.62999999999994,
+      51.59136000000001,
+      555.2475999999998,
+      106.6013599999999
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 59.4,
+     "angle": 0.0,
+     "translation": "水、レギュラーコークおよびコカ・コーラ ゼロのいずれの群においても、各群の投与前値と投与後値を比較した際、血清ALT活性に統計学的に有意な差は認められなかった（p > 0.05）。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-5",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "Group III participants were treated similarly to Group II, except that coke zero was given. Each participant in all the groups was asked to eat 2 hours after taking the test material.",
+     "bbox": [
+      48.24000000000001,
+      86.05135999999993,
+      292.81996000000004,
+      119.05135999999982
+     ],
+     "box": [
+      48.24000000000001,
+      86.05135999999993,
+      292.81996000000004,
+      129.64135999999985
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 3,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 69,
+     "baseline": 93.86,
+     "angle": 0.0,
+     "translation": "第III群の被験者には、コカ・コーラ ゼロを与えた点を除き、第II群と同様の処置を行った。全群の被験者は、試験飲料の摂取後2時間に食事をとるよう指示された。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-6",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "In table 3, it was observed that both regular coke and coke zero fed groups exhibited a significant increase (p< 0.05) in serum total cholesterol and LDL-cholesterol concentrations, and a significant decrease (p< 0.05) in serum HLD- cholesterol concentration. For regular coke fed group, the serum total cholesterol concentration changed from 4.67 ± 0.62 to 5.19 ± 0.50 mmol/L while LDL –cholesterol changed from 1.85 ± 0.54 to 2.71 ± 0.16 mmol/L. The HDL- cholesterol concentration changed from 2.37 ± 0.34 to 1.81 ±0.12 mmol/L.",
+     "bbox": [
+      310.62999999999954,
+      109.0913599999999,
+      555.3372399999997,
+      222.61135999999965
+     ],
+     "box": [
+      310.62999999999954,
+      109.0913599999999,
+      555.3372399999997,
+      233.11135999999965
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 10,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 233,
+     "baseline": 116.9,
+     "angle": 0.0,
+     "translation": "表3において、レギュラーコーク摂取群およびコカ・コーラ ゼロ摂取群の両群で、血清総コレステロールおよびLDL コレステロール濃度の有意な上昇（p < 0.05）と、血清HDL コレステロール濃度の有意な低下（p < 0.05）が認められた。レギュラーコーク摂取群では、血清総コレステロール濃度は4.67 ± 0.62から5.19 ± 0.50 mmol/Lへ、LDL コレステロールは1.85 ± 0.54から2.71 ± 0.16 mmol/Lへ変化した。HDL コレステロール濃度は2.37 ± 0.34から1.81 ± 0.12 mmol/Lへ変化した。",
+     "render_size": 9.06,
+     "overflow": false
+    },
+    {
+     "id": "p2-7",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "Blood Test: Blood was collected from each participant before feeding with test material on the 1st day and 2 hours after feeding on the 5<sup>th</sup>day. The blood samples thus collected were transferred into:",
+     "bbox": [
+      48.24000000000001,
+      132.13135999999986,
+      292.7328800000001,
+      176.53135999999972
+     ],
+     "box": [
+      48.24000000000001,
+      132.13135999999986,
+      292.7328800000001,
+      176.53135999999972
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 69,
+     "baseline": 139.94,
+     "angle": 0.0,
+     "translation": "<b>血液検査：</b>各被験者から、1日目の試験飲料摂取前および5日目の摂取後2時間に採血した。採取した血液は次の採血管に分注した。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-8",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "i) Labelled tubes containing sodium fluoride anticoagulant for determination of plasma glucose concentrations using an assay kit supplied by Randox Laboratories, UK.",
+     "bbox": [
+      48.24000000000001,
+      178.09135999999978,
+      292.74584000000004,
+      211.09135999999967
+     ],
+     "box": [
+      48.24000000000001,
+      178.09135999999978,
+      292.74584000000004,
+      211.09135999999967
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 3,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 185.9,
+     "angle": 0.0,
+     "translation": "i) フッ化ナトリウム含有抗凝固剤入りの標識管：Randox Laboratories社（英国）のアッセイキットを用いた血漿グルコース濃度の測定に供した。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-9",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "ii) Plain tubes and allowed to stand for about 15 minutes to clot before centrifuging at 3000rpm for 15 minutes at room temperature. Serum was separated using Pasteur pipette for the determination of serum aspartate aminotransferase (AST) and alanine aminotransferase (ALT) activities using kits of Randox Laboratories, UK, and for the determination of triglycerides, total cholesterol and high density lipoprotein (HDL) cholesterol concentrations using kits of Randox Laboratories, UK. Low density lipoprotein cholesterol (LDL –Cholesterol) concentration was calculated using the formula:",
+     "bbox": [
+      48.24000000000004,
+      212.65135999999973,
+      292.8437999999999,
+      337.60135999999983
+     ],
+     "box": [
+      48.24000000000004,
+      212.65135999999973,
+      292.8437999999999,
+      348.07135999999974
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 11,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 256,
+     "baseline": 220.46,
+     "angle": 0.0,
+     "translation": "ii) プレーン管（添加剤なし採血管）：約15分間静置して凝固させた後、室温にて3000 rpm で15分間遠心分離した。血清はパスツールピペットで分離し、Randox Laboratories社（英国）のキットを用いて、血清アスパラギン酸アミノトランスフェラーゼ（AST）およびアラニンアミノトランスフェラーゼ（ALT）活性、ならびにトリグリセリド、総コレステロールおよびHDL コレステロール（高比重リポタンパクコレステロール）濃度を測定した。LDL コレステロール（低比重リポタンパクコレステロール）濃度は次式により算出した。",
+     "render_size": 9.66,
+     "overflow": false
+    },
+    {
+     "id": "p2-10",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "For coke zero fed group, the serum total cholesterol concentration changed from 3.92 ± 1.48 to 4.51 ± 0.26 mmol/L while the LDL-cholesterol concentration changed from 1.73 ± 0.56 to 3.05 ± 0.29 mmol/L. The HDL- cholesterol concentration changed from 2.12 ± 0.27 to 1.01 ± 0.13 mmol/L.",
+     "bbox": [
+      310.6299999999993,
+      235.60135999999966,
+      555.3272799999994,
+      303.0413599999995
+     ],
+     "box": [
+      310.6299999999993,
+      235.60135999999966,
+      555.3272799999994,
+      313.6313599999995
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 6,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 140,
+     "baseline": 243.41,
+     "angle": 0.0,
+     "translation": "コカ・コーラ ゼロ摂取群では、血清総コレステロール濃度は3.92 ± 1.48から4.51 ± 0.26 mmol/Lへ、LDL コレステロール濃度は1.73 ± 0.56から3.05 ± 0.29 mmol/Lへ変化した。HDL コレステロール濃度は2.12 ± 0.27から1.01 ± 0.13 mmol/Lへ変化した。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-11",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "Comparison between the pre-treatment and post-treatment values of serum triglycerides concentrations showed that neither regular coke nor coke zero induced a statistically significant difference (p> 0.05).",
+     "bbox": [
+      310.62999999999926,
+      316.1213599999995,
+      555.2675199999992,
+      360.52135999999945
+     ],
+     "box": [
+      310.62999999999926,
+      316.1213599999995,
+      555.2675199999992,
+      371.11135999999937
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 323.93,
+     "angle": 0.0,
+     "translation": "血清トリグリセリド濃度の投与前値と投与後値を比較したところ、レギュラーコークおよびコカ・コーラ ゼロのいずれにおいても統計学的に有意な差は認められなかった（p > 0.05）。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-12",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "LDL-cholesterol = Total cholesterol – (HDL Cholesterol + 0.46 x triglycerides) (All in mmol/L).",
+     "bbox": [
+      48.23999999999995,
+      350.56135999999975,
+      292.84063999999995,
+      372.04135999999977
+     ],
+     "box": [
+      48.23999999999995,
+      350.56135999999975,
+      292.84063999999995,
+      382.6313599999997
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 358.37,
+     "angle": 0.0,
+     "translation": "LDL コレステロール ＝ 総コレステロール －（HDL コレステロール ＋ 0.46 × トリグリセリド）（単位はすべて mmol/L）。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-13",
+     "page": 1,
+     "kind": "line",
+     "text": "Table 1: Effect of regular coke and coke zero on blood\nglucose concentration of healthy human subjects",
+     "bbox": [
+      322.26999999999924,
+      373.6013599999994,
+      543.3786399999992,
+      395.0813599999994
+     ],
+     "box": [
+      310.31139999999874,
+      373.6013599999994,
+      555.3372399999997,
+      395.0813599999994
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 381.41,
+     "angle": 0.0,
+     "translation": "表1：レギュラーコークおよびコカ・コーラ ゼロが\n健常被験者の血糖値に及ぼす影響",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-14",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "Statistical Analysis: All values were expressed as mean ± standard error of mean (SEM) and statistically analyzed using student t-distribution test. Differences were considered significant at p< 0.005.",
+     "bbox": [
+      48.239999999999895,
+      385.1213599999997,
+      292.8796399999998,
+      429.5413599999997
+     ],
+     "box": [
+      48.239999999999895,
+      385.1213599999997,
+      292.8796399999998,
+      440.57199999999966
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 392.93,
+     "angle": 0.0,
+     "translation": "<b>統計解析：</b>すべての値は平均値 ± 標準誤差（SEM）で表し、Student の t 検定を用いて統計解析を行った。差は p < 0.005 を有意とした。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-15",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Group fed",
+     "bbox": [
+      339.31,
+      397.054,
+      376.108,
+      406.054
+     ],
+     "box": [
+      326.29,
+      397.7099999999999,
+      392.11,
+      404.50999999999993
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 6,
+     "baseline": 404.11,
+     "angle": 0.0,
+     "translation": "摂取群",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-16",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Blood glucose concentration mmol/L",
+     "bbox": [
+      401.71,
+      397.054,
+      535.012,
+      406.054
+     ],
+     "box": [
+      398.11,
+      397.7099999999999,
+      539.51,
+      404.50999999999993
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 14,
+     "baseline": 404.11,
+     "angle": 0.0,
+     "translation": "血糖値（mmol/L）",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-17",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Before (Day 1)",
+     "bbox": [
+      398.47,
+      407.854,
+      452.497,
+      416.854
+     ],
+     "box": [
+      398.47,
+      408.50999999999993,
+      455.14,
+      415.43
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 414.91,
+     "angle": 0.0,
+     "translation": "投与前（1日目）",
+     "render_size": 7.38,
+     "overflow": false
+    },
+    {
+     "id": "p2-18",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "After (Day 5)",
+     "bbox": [
+      475.78,
+      407.854,
+      523.7769999999999,
+      416.854
+     ],
+     "box": [
+      461.14,
+      408.50999999999993,
+      539.51,
+      415.43
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 8,
+     "baseline": 414.91,
+     "angle": 0.0,
+     "translation": "投与後（5日目）",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-19",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Water",
+     "bbox": [
+      346.63,
+      418.774,
+      368.482,
+      427.774
+     ],
+     "box": [
+      326.29,
+      419.43,
+      392.11,
+      426.22999999999996
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 6,
+     "baseline": 425.83,
+     "angle": 0.0,
+     "translation": "水",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-20",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "4.10 ± 0.27",
+     "bbox": [
+      405.07,
+      418.774,
+      446.059,
+      427.774
+     ],
+     "box": [
+      398.11,
+      419.43,
+      455.14,
+      426.22999999999996
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 6,
+     "baseline": 425.83,
+     "angle": 0.0,
+     "translation": "4.10 ± 0.27",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-21",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "4.18 ± 0.28",
+     "bbox": [
+      479.38,
+      418.774,
+      520.3389999999999,
+      427.774
+     ],
+     "box": [
+      461.14,
+      419.43,
+      539.51,
+      426.22999999999996
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 8,
+     "baseline": 425.83,
+     "angle": 0.0,
+     "translation": "4.18 ± 0.28",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-22",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Regular coke",
+     "bbox": [
+      333.79,
+      429.57399999999996,
+      381.457,
+      438.57399999999996
+     ],
+     "box": [
+      326.29,
+      430.22999999999996,
+      392.11,
+      437.03
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 6,
+     "baseline": 436.63,
+     "angle": 0.0,
+     "translation": "レギュラーコーク",
+     "render_size": 8.19,
+     "overflow": false
+    },
+    {
+     "id": "p2-23",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "3.94 ± 0.52<sup>a</sup>",
+     "bbox": [
+      403.75,
+      429.57399999999996,
+      447.484,
+      438.57399999999996
+     ],
+     "box": [
+      398.11,
+      430.22999999999996,
+      455.14,
+      437.03
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 6,
+     "baseline": 436.63,
+     "angle": 0.0,
+     "translation": "3.94 ± 0.52<sup>a</sup>",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-24",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "5.2 ± 0.73<sup>b</sup>",
+     "bbox": [
+      480.1,
+      429.57399999999996,
+      519.7,
+      438.57399999999996
+     ],
+     "box": [
+      461.14,
+      430.22999999999996,
+      539.51,
+      437.03
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 8,
+     "baseline": 436.63,
+     "angle": 0.0,
+     "translation": "5.2 ± 0.73<sup>b</sup>",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-25",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Coke zero",
+     "bbox": [
+      339.31,
+      440.49399999999997,
+      375.967,
+      449.49399999999997
+     ],
+     "box": [
+      326.29,
+      441.03,
+      392.11,
+      447.95
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 6,
+     "baseline": 447.55,
+     "angle": 0.0,
+     "translation": "コカ・コーラ ゼロ",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-26",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "3.94 ± 0.52",
+     "bbox": [
+      405.07,
+      440.49399999999997,
+      446.059,
+      449.49399999999997
+     ],
+     "box": [
+      398.11,
+      441.03,
+      455.14,
+      447.95
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 6,
+     "baseline": 447.55,
+     "angle": 0.0,
+     "translation": "3.94 ± 0.52",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-27",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "3.99 ± 0.54",
+     "bbox": [
+      479.38,
+      440.49399999999997,
+      520.3389999999999,
+      449.49399999999997
+     ],
+     "box": [
+      461.14,
+      441.03,
+      539.51,
+      447.95
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 8,
+     "baseline": 447.55,
+     "angle": 0.0,
+     "translation": "3.99 ± 0.54",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-28",
+     "page": 1,
+     "kind": "heading",
+     "text": "3. Results",
+     "bbox": [
+      48.239999999999895,
+      443.06199999999967,
+      99.132,
+      455.06199999999995
+     ],
+     "box": [
+      48.239999999999895,
+      443.06199999999967,
+      141.6300018,
+      464.9413599999999
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 7,
+     "baseline": 452.47,
+     "angle": 0.0,
+     "translation": "3. 結果",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-29",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "All values are expressed as mean ± SEM for 10 human subjects. Means within each row were compared for significant differences using subject T-distribution test. a, b = statistically significant difference (p< 0.05).",
+     "bbox": [
+      310.6299999999999,
+      462.9013599999999,
+      555.2973999999998,
+      507.30135999999993
+     ],
+     "box": [
+      310.6299999999999,
+      462.9013599999999,
+      555.2973999999998,
+      517.8913599999998
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 470.71,
+     "angle": 0.0,
+     "translation": "すべての値は健常被験者10名の平均値 ± SEM で示した。各行内の平均値間の有意差は Student の t 検定により比較した。a、b は統計学的に有意な差を示す（p < 0.05）。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-30",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "The effects of regular coke and coke zero on blood glucose concentrations of human subjects are shown in Table 1. In subjects fed regular coke, the blood glucose concentration increased significantly (p< 0.05) from 3.94 ± 0.52 mmol/L to 5.2 ± 0.73 mmol/L. However, in subjects fed coke zero, the blood glucose concentration was found to show no significant difference (p > 0.05) when the pre-treatment value of 3.94 ± 0.52 mmol/L was compared with the post- treatment value of 3.99 ± 0.54 mmol/L. Similarly, in subjects fed water, no significant difference (p> 0.05) was observed between the pre-treatment value of 4.10 ± 0.27 mmol/L and the post-treatment value of 4.18 ± 0.28 mmol/L.",
+     "bbox": [
+      48.23999999999998,
+      467.9413599999999,
+      292.9099800000001,
+      604.41136
+     ],
+     "box": [
+      48.23999999999998,
+      467.9413599999999,
+      292.9099800000001,
+      615.00136
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 12,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 280,
+     "baseline": 475.75,
+     "angle": 0.0,
+     "translation": "レギュラーコークおよびコカ・コーラ ゼロが被験者の血糖値に及ぼす影響を表1に示す。レギュラーコーク摂取群では、血糖値は 3.94 ± 0.52 mmol/L から 5.2 ± 0.73 mmol/L へと有意に上昇した（p < 0.05）。一方、コカ・コーラ ゼロ摂取群では、投与前値 3.94 ± 0.52 mmol/L と投与後値 3.99 ± 0.54 mmol/L を比較しても有意差は認められなかった（p > 0.05）。同様に、水摂取群においても、投与前値 4.10 ± 0.27 mmol/L と投与後値 4.18 ± 0.28 mmol/L の間に有意差は認められなかった（p > 0.05）。",
+     "render_size": 8.47,
+     "overflow": false
+    },
+    {
+     "id": "p2-31",
+     "page": 1,
+     "kind": "line",
+     "text": "Table 2: Activities of serum aspartate aminotransferase\n(AST) and alanine aminotransferase (ALT) of human\nsubjects fed two brands of coke.",
+     "bbox": [
+      321.30999999999983,
+      520.3813599999999,
+      544.3550799999998,
+      553.4113599999998
+     ],
+     "box": [
+      310.3278399999999,
+      520.3813599999999,
+      555.3372399999997,
+      553.4113599999998
+     ],
+     "size": 9.96,
+     "leading": 1.158,
+     "lines": 3,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 528.19,
+     "angle": 0.0,
+     "translation": "表2：2種類のコーク製品を摂取した被験者の\n血清アスパラギン酸アミノトランスフェラーゼ（AST）および\nアラニンアミノトランスフェラーゼ（ALT）活性",
+     "render_size": 8.76,
+     "overflow": false
+    },
+    {
+     "id": "p2-32",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Group fed",
+     "bbox": [
+      331.39,
+      555.604,
+      371.071,
+      564.604
+     ],
+     "box": [
+      326.29,
+      555.9,
+      376.39,
+      562.8199999999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 562.66,
+     "angle": 0.0,
+     "translation": "摂取群",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-33",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Day",
+     "bbox": [
+      386.83,
+      555.604,
+      402.24699999999996,
+      564.604
+     ],
+     "box": [
+      382.39,
+      555.9,
+      407.83000000000004,
+      562.8199999999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 4,
+     "baseline": 562.66,
+     "angle": 0.0,
+     "translation": "日",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-34",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Serum activity (IU/L)",
+     "bbox": [
+      434.02,
+      555.604,
+      516.9219999999999,
+      564.604
+     ],
+     "box": [
+      413.83000000000004,
+      555.9,
+      539.51,
+      562.8199999999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 13,
+     "baseline": 562.66,
+     "angle": 0.0,
+     "translation": "血清活性（IU/L）",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-35",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "AST",
+     "bbox": [
+      430.78,
+      566.404,
+      448.28499999999997,
+      575.404
+     ],
+     "box": [
+      413.83000000000004,
+      566.8199999999999,
+      466.42,
+      573.6199999999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 573.46,
+     "angle": 0.0,
+     "translation": "AST",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-36",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "ALT",
+     "bbox": [
+      495.58,
+      566.404,
+      514.084,
+      575.404
+     ],
+     "box": [
+      472.42,
+      566.8199999999999,
+      539.51,
+      573.6199999999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 7,
+     "baseline": 573.46,
+     "angle": 0.0,
+     "translation": "ALT",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-37",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Water",
+     "bbox": [
+      340.27,
+      576.9639999999999,
+      362.122,
+      585.9639999999999
+     ],
+     "box": [
+      326.29,
+      577.6199999999999,
+      376.39,
+      594.86
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 584.02,
+     "angle": 0.0,
+     "translation": "水",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-38",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "0\n5",
+     "bbox": [
+      392.23,
+      576.9639999999999,
+      396.73,
+      596.404
+     ],
+     "box": [
+      382.39,
+      577.6199999999999,
+      407.83000000000004,
+      594.86
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 4,
+     "baseline": 584.02,
+     "angle": 0.0,
+     "translation": "0\n5",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-39",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "7.90 ± 0.63\n8.30 ± 1.30",
+     "bbox": [
+      418.99,
+      576.9639999999999,
+      459.97900000000004,
+      596.404
+     ],
+     "box": [
+      413.83000000000004,
+      577.6199999999999,
+      466.42,
+      594.86
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 584.02,
+     "angle": 0.0,
+     "translation": "7.90 ± 0.63\n8.30 ± 1.30",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-40",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "4.80 ± 0.61\n4.30 ± 0.43",
+     "bbox": [
+      484.3,
+      576.9639999999999,
+      525.259,
+      596.404
+     ],
+     "box": [
+      472.42,
+      577.6199999999999,
+      539.51,
+      594.86
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 584.02,
+     "angle": 0.0,
+     "translation": "4.80 ± 0.61\n4.30 ± 0.43",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-41",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Regular coke",
+     "bbox": [
+      327.43,
+      598.204,
+      375.097,
+      607.204
+     ],
+     "box": [
+      326.29,
+      598.86,
+      376.39,
+      616.0999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 605.26,
+     "angle": 0.0,
+     "translation": "レギュラーコーク",
+     "render_size": 7.11,
+     "overflow": false
+    },
+    {
+     "id": "p2-42",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "0\n5",
+     "bbox": [
+      392.23,
+      598.204,
+      396.73,
+      617.5239999999999
+     ],
+     "box": [
+      382.39,
+      598.86,
+      407.83000000000004,
+      616.0999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 4,
+     "baseline": 605.26,
+     "angle": 0.0,
+     "translation": "0\n5",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-43",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "5.30 ± 0.41<sup>a</sup>\n9.00 ± 0.72<sup>b</sup>",
+     "bbox": [
+      417.55,
+      598.204,
+      461.62,
+      617.5239999999999
+     ],
+     "box": [
+      413.83000000000004,
+      598.86,
+      466.42,
+      616.0999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 605.26,
+     "angle": 0.0,
+     "translation": "5.30 ± 0.41<sup>a</sup>\n9.00 ± 0.72<sup>b</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-44",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "3.33 ± 0.47\n4.03 ± 0.56",
+     "bbox": [
+      484.3,
+      598.204,
+      525.259,
+      617.5239999999999
+     ],
+     "box": [
+      472.42,
+      598.86,
+      539.51,
+      616.0999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 605.26,
+     "angle": 0.0,
+     "translation": "3.33 ± 0.47\n4.03 ± 0.56",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-45",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "Table 2 showed the result for serum aminotransferase activities, in which both regular coke and coke zero fed groups exhibited statistically significant increase (p< 0.05) in serum aspartate aminotransferase (AST) activity.",
+     "bbox": [
+      48.24000000000001,
+      617.49136,
+      292.8974399999999,
+      661.8913600000001
+     ],
+     "box": [
+      48.24000000000001,
+      617.49136,
+      292.8974399999999,
+      672.48136
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 625.3,
+     "angle": 0.0,
+     "translation": "血清アミノトランスフェラーゼ活性の結果を表2に示す。レギュラーコーク摂取群およびコカ・コーラ ゼロ摂取群のいずれにおいても、血清アスパラギン酸アミノトランスフェラーゼ（AST）活性に統計学的に有意な上昇が認められた（p < 0.05）。",
+     "render_size": 9.36,
+     "overflow": false
+    },
+    {
+     "id": "p2-46",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "Coke zero",
+     "bbox": [
+      332.95,
+      619.444,
+      369.60699999999997,
+      628.444
+     ],
+     "box": [
+      326.29,
+      620.0999999999999,
+      376.39,
+      637.22
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 626.5,
+     "angle": 0.0,
+     "translation": "コカ・コーラ ゼロ",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-47",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "0\n5",
+     "bbox": [
+      392.23,
+      619.444,
+      396.73,
+      638.7639999999999
+     ],
+     "box": [
+      382.39,
+      620.0999999999999,
+      407.83000000000004,
+      637.22
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 4,
+     "baseline": 626.5,
+     "angle": 0.0,
+     "translation": "0\n5",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-48",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "5.33 ± 0.41<sup>c</sup>\n7.33 ± 0.43<sup>d</sup>",
+     "bbox": [
+      417.55,
+      619.444,
+      461.62,
+      638.7639999999999
+     ],
+     "box": [
+      413.83000000000004,
+      620.0999999999999,
+      466.42,
+      637.22
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 626.5,
+     "angle": 0.0,
+     "translation": "5.33 ± 0.41<sup>c</sup>\n7.33 ± 0.43<sup>d</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-49",
+     "page": 1,
+     "kind": "table_cell",
+     "text": "3.33 ± 0.47\n3.90 ± 0.53",
+     "bbox": [
+      484.3,
+      619.444,
+      525.259,
+      638.7639999999999
+     ],
+     "box": [
+      472.42,
+      620.0999999999999,
+      539.51,
+      637.22
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 626.5,
+     "angle": 0.0,
+     "translation": "3.33 ± 0.47\n3.90 ± 0.53",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p2-50",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "All values are expressed as mean ± SEM for 10 human subjects. Means within each group were compared for significant differences using student T-distribution test. Means in each group with different superscripts are significantly different (p< 0.05).",
+     "bbox": [
+      310.62999999999994,
+      652.1713599999999,
+      555.25072,
+      708.09136
+     ],
+     "box": [
+      310.62999999999994,
+      652.1713599999999,
+      555.25072,
+      780.462
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 5,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 233,
+     "baseline": 659.98,
+     "angle": 0.0,
+     "translation": "すべての値は健常被験者10名の平均値 ± SEM で示した。各群内の平均値間の有意差は Student の t 検定により比較した。各群内で異なる上付き文字を付した平均値間には有意差がある（p < 0.05）。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-51",
+     "page": 1,
+     "kind": "paragraph",
+     "text": "For regular coke fed group, the AST activity changed from 5.30 ± 0.41 IU/L to 9.00 ± 0.72 IU/L while the activity for coke zero fed group changed from 5.33 ± 0.41 IU/L to 7.33 ± 0.43 IU/L. For the group fed water, the AST activity changed non-significantly from 7.90 ± 0.63 IU/L to 8.30 ± 1.30 IU/L.",
+     "bbox": [
+      48.23999999999998,
+      674.97136,
+      292.87752,
+      742.43136
+     ],
+     "box": [
+      48.23999999999998,
+      674.97136,
+      292.87752,
+      780.462
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 6,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 210,
+     "baseline": 682.78,
+     "angle": 0.0,
+     "translation": "レギュラーコーク摂取群では、AST活性は5.30 ± 0.41 IU/Lから9.00 ± 0.72 IU/Lに変化し、コカ・コーラ ゼロ摂取群では5.33 ± 0.41 IU/Lから7.33 ± 0.43 IU/Lに変化した。水摂取群では、AST活性は7.90 ± 0.63 IU/Lから8.30 ± 1.30 IU/Lへと有意でない変化を示した。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p2-52",
+     "page": 1,
+     "kind": "heading",
+     "text": "Volume 4 Issue 11, November 2015",
+     "bbox": [
+      211.97,
+      782.952,
+      391.058,
+      794.952
+     ],
+     "box": [
+      48.239999999999895,
+      782.952,
+      554.7880000000001,
+      794.952
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 40,
+     "baseline": 792.36,
+     "angle": 0.0,
+     "translation": "Volume 4 Issue 11, November 2015",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-53",
+     "page": 1,
+     "kind": "heading",
+     "text": "www.ijsr.net",
+     "bbox": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "box": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 806.16,
+     "angle": 0.0,
+     "translation": "www.ijsr.net",
+     "render_size": 9.84,
+     "overflow": false
+    },
+    {
+     "id": "p2-54",
+     "page": 1,
+     "kind": "line",
+     "text": "Paper ID: NOV151203",
+     "bbox": [
+      72.0,
+      806.6920488,
+      152.04,
+      814.6920488
+     ],
+     "box": [
+      72.0,
+      806.6920488,
+      185.44999999999996,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 13,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "Paper ID: NOV151203",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-55",
+     "page": 1,
+     "kind": "line",
+     "text": "1517",
+     "bbox": [
+      505.5230103,
+      806.6920488,
+      523.3150103,
+      814.6920488
+     ],
+     "box": [
+      505.5230103,
+      806.6920488,
+      555.3372399999997,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "1517",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p2-56",
+     "page": 1,
+     "kind": "line",
+     "text": "Licensed Under Creative Commons Attribution CC BY",
+     "bbox": [
+      190.24999999999997,
+      810.11136,
+      412.77631999999994,
+      820.0713599999999
+     ],
+     "box": [
+      158.016,
+      810.11136,
+      445.0103199999999,
+      820.0713599999999
+     ],
+     "size": 9.96,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 27,
+     "baseline": 817.92,
+     "angle": 0.0,
+     "translation": "Licensed Under Creative Commons Attribution CC BY",
+     "render_size": 9.96,
+     "overflow": false
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "width": 595.32,
+   "height": 841.92,
+   "rotation": 0,
+   "status": "ok",
+   "note": "",
+   "segments": [
+    {
+     "id": "p3-1",
+     "page": 2,
+     "kind": "heading",
+     "text": "International Journal of Science and Research (IJSR)",
+     "bbox": [
+      164.3,
+      8.831999999999994,
+      438.788,
+      20.831999999999994
+     ],
+     "box": [
+      48.239999999999895,
+      8.831999999999994,
+      554.8480000000002,
+      20.831999999999994
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 40,
+     "baseline": 18.24,
+     "angle": 0.0,
+     "translation": "International Journal of Science and Research (IJSR)",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-2",
+     "page": 2,
+     "kind": "line",
+     "text": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "bbox": [
+      160.70000000000002,
+      22.43136000000004,
+      442.4186000000001,
+      43.911359999999945
+     ],
+     "box": [
+      48.239999999999895,
+      22.43136000000004,
+      554.8786000000002,
+      43.911359999999945
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 2,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 96,
+     "baseline": 30.24,
+     "angle": 0.0,
+     "translation": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-3",
+     "page": 2,
+     "kind": "line",
+     "text": "Table 3: Serum lipid profile of human subjects fed regular coke and coke zero respectively",
+     "bbox": [
+      118.82,
+      51.59136000000001,
+      484.4424799999998,
+      61.55135999999993
+     ],
+     "box": [
+      48.239999999999895,
+      51.59136000000001,
+      555.0224799999999,
+      61.55135999999993
+     ],
+     "size": 9.96,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 48,
+     "baseline": 59.4,
+     "angle": 0.0,
+     "translation": "表3：レギュラーコークおよびコカ・コーラ ゼロをそれぞれ摂取させた被験者の血清脂質プロファイル",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-4",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "Group fed",
+     "bbox": [
+      82.344,
+      63.743999999999915,
+      122.021,
+      72.74399999999991
+     ],
+     "box": [
+      78.264,
+      64.15999999999997,
+      126.26000000000002,
+      70.95999999999992
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 70.8,
+     "angle": 0.0,
+     "translation": "摂取群",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-5",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "Day",
+     "bbox": [
+      141.74,
+      63.743999999999915,
+      157.157,
+      72.74399999999991
+     ],
+     "box": [
+      132.26000000000002,
+      64.15999999999997,
+      166.82,
+      70.95999999999992
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 4,
+     "baseline": 70.8,
+     "angle": 0.0,
+     "translation": "日",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-6",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "Serum lipid concentrations (mmol/L)",
+     "bbox": [
+      262.61,
+      63.743999999999915,
+      405.289,
+      72.74399999999991
+     ],
+     "box": [
+      172.82,
+      64.15999999999997,
+      495.34000000000003,
+      70.95999999999992
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 34,
+     "baseline": 70.8,
+     "angle": 0.0,
+     "translation": "血清脂質濃度（mmol/L）",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-7",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "Total chol.",
+     "bbox": [
+      189.77,
+      74.56399999999996,
+      230.63,
+      83.56399999999996
+     ],
+     "box": [
+      172.82,
+      74.95999999999992,
+      247.85000000000002,
+      81.89999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 7,
+     "baseline": 81.62,
+     "angle": 0.0,
+     "translation": "総コレステロール",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-8",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "TG",
+     "bbox": [
+      284.81,
+      74.56399999999996,
+      297.812,
+      83.56399999999996
+     ],
+     "box": [
+      253.85000000000002,
+      74.95999999999992,
+      329.1371111111111,
+      81.89999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 7,
+     "baseline": 81.62,
+     "angle": 0.0,
+     "translation": "TG",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-9",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "HDL-Chol",
+     "bbox": [
+      353.71,
+      74.56399999999996,
+      394.609,
+      83.56399999999996
+     ],
+     "box": [
+      335.1371111111111,
+      74.95999999999992,
+      413.59000000000003,
+      81.89999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 8,
+     "baseline": 81.62,
+     "angle": 0.0,
+     "translation": "HDL-C",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-10",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "LDL-chol",
+     "bbox": [
+      438.7,
+      74.56399999999996,
+      476.11,
+      83.56399999999996
+     ],
+     "box": [
+      419.59000000000003,
+      74.95999999999992,
+      495.34000000000003,
+      81.89999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 7,
+     "baseline": 81.62,
+     "angle": 0.0,
+     "translation": "LDL-C",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-11",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "Water",
+     "bbox": [
+      91.224,
+      85.24399999999991,
+      113.07600000000001,
+      94.24399999999991
+     ],
+     "box": [
+      78.264,
+      85.89999999999998,
+      126.26000000000002,
+      103.01999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 92.3,
+     "angle": 0.0,
+     "translation": "水",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-12",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "0\n5",
+     "bbox": [
+      147.14,
+      85.24399999999991,
+      151.64,
+      104.56399999999996
+     ],
+     "box": [
+      132.26000000000002,
+      85.89999999999998,
+      166.82,
+      103.01999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 4,
+     "baseline": 92.3,
+     "angle": 0.0,
+     "translation": "0\n5",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-13",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "3.40 ± 0.25\n3.42 ± 0.44",
+     "bbox": [
+      189.89,
+      85.24399999999991,
+      230.849,
+      104.56399999999996
+     ],
+     "box": [
+      172.82,
+      85.89999999999998,
+      247.85000000000002,
+      103.01999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 92.3,
+     "angle": 0.0,
+     "translation": "3.40 ± 0.25\n3.42 ± 0.44",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-14",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "0.98 ± 0.12\n1.02 ± 0.28",
+     "bbox": [
+      270.89,
+      85.24399999999991,
+      311.849,
+      104.56399999999996
+     ],
+     "box": [
+      253.85000000000002,
+      85.89999999999998,
+      329.1371111111111,
+      103.01999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 92.3,
+     "angle": 0.0,
+     "translation": "0.98 ± 0.12\n1.02 ± 0.28",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-15",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "1.27± 0.15\n0.96 ± 0.09",
+     "bbox": [
+      353.71,
+      85.24399999999991,
+      394.66900000000004,
+      104.56399999999996
+     ],
+     "box": [
+      335.1371111111111,
+      85.89999999999998,
+      413.59000000000003,
+      103.01999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 8,
+     "baseline": 92.3,
+     "angle": 0.0,
+     "translation": "1.27± 0.15\n0.96 ± 0.09",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-16",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "1.0 ± 0.11\n2.10 ± 0.39",
+     "bbox": [
+      437.02,
+      85.24399999999991,
+      477.97900000000004,
+      104.56399999999996
+     ],
+     "box": [
+      419.59000000000003,
+      85.89999999999998,
+      495.34000000000003,
+      103.01999999999998
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 92.3,
+     "angle": 0.0,
+     "translation": "1.0 ± 0.11\n2.10 ± 0.39",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-17",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "Regular coke",
+     "bbox": [
+      78.384,
+      106.36399999999992,
+      126.04699999999998,
+      115.36399999999992
+     ],
+     "box": [
+      78.384,
+      107.01999999999998,
+      126.26000000000002,
+      124.25999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 113.42,
+     "angle": 0.0,
+     "translation": "レギュラーコーク",
+     "render_size": 6.84,
+     "overflow": false
+    },
+    {
+     "id": "p3-18",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "0\n5",
+     "bbox": [
+      147.14,
+      106.36399999999992,
+      151.64,
+      125.80399999999997
+     ],
+     "box": [
+      132.26000000000002,
+      107.01999999999998,
+      166.82,
+      124.25999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 4,
+     "baseline": 113.42,
+     "angle": 0.0,
+     "translation": "0\n5",
+     "render_size": 9.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-19",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "4.67± 0.62<sup>a</sup>\n5.19±0.15<sup>b</sup>",
+     "bbox": [
+      189.65,
+      106.36399999999992,
+      231.07399999999998,
+      125.80399999999997
+     ],
+     "box": [
+      172.82,
+      107.01999999999998,
+      247.85000000000002,
+      124.25999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 113.42,
+     "angle": 0.0,
+     "translation": "4.67± 0.62<sup>a</sup>\n5.19±0.15<sup>b</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-20",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "0.97 ± 0.06\n1.20 ± 0.27",
+     "bbox": [
+      270.89,
+      106.36399999999992,
+      311.849,
+      125.80399999999997
+     ],
+     "box": [
+      253.85000000000002,
+      107.01999999999998,
+      329.1371111111111,
+      124.25999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 113.42,
+     "angle": 0.0,
+     "translation": "0.97 ± 0.06\n1.20 ± 0.27",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-21",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "2.37 ± 0.34<sup>e</sup>\n1.81 ± 0.12<sup>f</sup>",
+     "bbox": [
+      352.39,
+      106.36399999999992,
+      396.094,
+      125.80399999999997
+     ],
+     "box": [
+      335.1371111111111,
+      107.01999999999998,
+      413.59000000000003,
+      124.25999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 8,
+     "baseline": 113.42,
+     "angle": 0.0,
+     "translation": "2.37 ± 0.34<sup>e</sup>\n1.81 ± 0.12<sup>f</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-22",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "1.85± 0.54<sup>k</sup>\n2.71 ± 0.16<sup>l</sup>",
+     "bbox": [
+      436.18,
+      106.36399999999992,
+      478.88800000000003,
+      125.80399999999997
+     ],
+     "box": [
+      419.59000000000003,
+      107.01999999999998,
+      495.34000000000003,
+      124.25999999999999
+     ],
+     "size": 9.0,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 113.42,
+     "angle": 0.0,
+     "translation": "1.85± 0.54<sup>k</sup>\n2.71 ± 0.16<sup>l</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-23",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "Coke zero",
+     "bbox": [
+      83.904,
+      127.60399999999993,
+      120.557,
+      136.60399999999993
+     ],
+     "box": [
+      78.264,
+      128.26,
+      126.26000000000002,
+      145.5
+     ],
+     "size": 9.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 5,
+     "baseline": 134.66,
+     "angle": 0.0,
+     "translation": "コカ・コーラ ゼロ",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-24",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "0\n5",
+     "bbox": [
+      147.14,
+      127.60399999999993,
+      151.64,
+      146.92399999999986
+     ],
+     "box": [
+      132.26000000000002,
+      128.26,
+      166.82,
+      145.5
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 4,
+     "baseline": 134.66,
+     "angle": 0.0,
+     "translation": "0\n5",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-25",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "3.92± 1.48<sup>c</sup>\n4.51±0.15<sup>d</sup>",
+     "bbox": [
+      189.65,
+      127.60399999999993,
+      231.07399999999998,
+      146.92399999999986
+     ],
+     "box": [
+      172.82,
+      128.26,
+      247.85000000000002,
+      145.5
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 134.66,
+     "angle": 0.0,
+     "translation": "3.92± 1.48<sup>c</sup>\n4.51±0.15<sup>d</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-26",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "1.09±0.28\n0.98 ± 0.19",
+     "bbox": [
+      270.89,
+      127.60399999999993,
+      311.849,
+      146.92399999999986
+     ],
+     "box": [
+      253.85000000000002,
+      128.26,
+      329.1371111111111,
+      145.5
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 134.66,
+     "angle": 0.0,
+     "translation": "1.09±0.28\n0.98 ± 0.19",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-27",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "2.12 ± 0.27<sup>g</sup>\n1.01 ± 0.13<sup>h</sup>",
+     "bbox": [
+      352.27,
+      127.60399999999993,
+      396.31,
+      146.92399999999986
+     ],
+     "box": [
+      335.1371111111111,
+      128.26,
+      413.59000000000003,
+      145.5
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 8,
+     "baseline": 134.66,
+     "angle": 0.0,
+     "translation": "2.12 ± 0.27<sup>g</sup>\n1.01 ± 0.13<sup>h</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-28",
+     "page": 2,
+     "kind": "table_cell",
+     "text": "1.73± 0.56<sup>m</sup>\n3.05± 0.29<sup>n</sup>",
+     "bbox": [
+      435.82,
+      127.60399999999993,
+      479.248,
+      146.92399999999986
+     ],
+     "box": [
+      419.59000000000003,
+      128.26,
+      495.34000000000003,
+      145.5
+     ],
+     "size": 9.0,
+     "leading": 1.147,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 7,
+     "baseline": 134.66,
+     "angle": 0.0,
+     "translation": "1.73± 0.56<sup>m</sup>\n3.05± 0.29<sup>n</sup>",
+     "render_size": 7.92,
+     "overflow": false
+    },
+    {
+     "id": "p3-29",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "All values are expressed as mean ± SEM for 10 human subjects. Means within each group were compared for significant differences using student T-distribution test. Means with different superscripts within each group differed significantly (p< 0.05).",
+     "bbox": [
+      48.24,
+      160.45136000000002,
+      292.88072,
+      216.37135999999987
+     ],
+     "box": [
+      48.24,
+      160.45136000000002,
+      292.88072,
+      216.37135999999987
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 5,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 168.26,
+     "angle": 0.0,
+     "translation": "値はすべて健常被験者10名の平均値 ± 標準誤差（SEM）で示した。各群内の平均値の有意差はStudent の t 検定により比較した。各群内で異なる上付き文字を付した平均値間には有意差がある（p < 0.05）。\n総コレステロール＝血清総コレステロール\nTG＝血清トリグリセリド\nHDL＝高比重リポタンパクコレステロール\nLDL＝低比重リポタンパクコレステロール",
+     "render_size": 6.97,
+     "overflow": false
+    },
+    {
+     "id": "p3-30",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "zero exhibited a high serum AST activity only, it can be said that this action may reflect a mild toxicity which permitted leakage of the enzyme from tissues other than the liver into the bloodstream.",
+     "bbox": [
+      310.63,
+      160.45135999999968,
+      555.27892,
+      204.8513599999999
+     ],
+     "box": [
+      310.63,
+      160.45135999999968,
+      555.27892,
+      215.44135999999992
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 168.26,
+     "angle": 0.0,
+     "translation": "ゼロでは血清AST活性の上昇のみが認められたことから、この作用は肝臓以外の組織から血中への酵素の漏出を許す軽度の毒性を反映している可能性があると言える。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-31",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "Total chol = serum total cholesterol\nTG = serum triglycerides\nHDL = High density lipoprotein cholesterol LDL = Low density lipoprotein cholesterol",
+     "bbox": [
+      48.24000000000004,
+      217.93135999999993,
+      223.56192000000007,
+      262.36135999999976
+     ],
+     "box": [
+      48.24000000000004,
+      217.93135999999993,
+      223.56192000000007,
+      269.6402988499999
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 66,
+     "baseline": 225.74,
+     "angle": 0.0,
+     "translation": "",
+     "render_size": null,
+     "overflow": false
+    },
+    {
+     "id": "p3-32",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "In the analysis of lipid profile, both regular coke and coke zero were found to exhibit an increase in serum total cholesterol and LDL-cholesterol concentrations, a decrease in HDL-cholesterol concentration and a normal level of serum triglycerides. The increased total cholesterol and LDL-cholesterol concentrations and reduced HDL- cholesterol concentration observed could be suggestive of the fact that the two coke products have the potential tendencies of predisposing people to type-2 diabetes, atherosclerosis and other cardiovascular diseases, since lipid abnormalities are common in such conditions (Konstantinos, 2012).",
+     "bbox": [
+      310.6299999999999,
+      217.93135999999993,
+      555.3166799999999,
+      354.40135999999967
+     ],
+     "box": [
+      310.6299999999999,
+      217.93135999999993,
+      555.3166799999999,
+      365.3119999999996
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 12,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 280,
+     "baseline": 225.74,
+     "angle": 0.0,
+     "translation": "脂質プロファイルの解析では、レギュラーコークおよびコカ・コーラ ゼロのいずれにおいても、血清総コレステロールおよびLDL コレステロール濃度の上昇、HDL コレステロール濃度の低下、ならびに血清トリグリセリドの正常値が認められた。総コレステロールおよびLDL コレステロール濃度の上昇とHDL コレステロール濃度の低下は、2種類のコーク製品が2型糖尿病、アテローム性動脈硬化症およびその他の心血管疾患に罹患しやすくする傾向をもつ可能性を示唆するものと考えられる。これは、こうした病態では脂質異常が一般的にみられるためである（Konstantinos, 2012）。",
+     "render_size": 9.66,
+     "overflow": false
+    },
+    {
+     "id": "p3-33",
+     "page": 2,
+     "kind": "heading",
+     "text": "4. Discussion",
+     "bbox": [
+      48.240000000000045,
+      275.8819999999997,
+      115.85999999999999,
+      287.88199999999995
+     ],
+     "box": [
+      48.240000000000045,
+      275.8819999999997,
+      141.6300018,
+      297.76135999999997
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 7,
+     "baseline": 285.29,
+     "angle": 0.0,
+     "translation": "4. 考察",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-34",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "Studies have shown that high intake of sugar-sweetened soft drinks has the potential of increasing fasting blood glucose concentration and can predispose one to several disease states, including obesity, type-2 diabetes and cardiovascular disease (Gibson, 2008; Laughlin et al., 2014). Evidence from this study showed that human subjects fed regular coke had a significant increase (p< 0.05) in blood glucose concentration. Regular coke is a soft drink with added sugars either in the form of sucrose or high fructose corn syrup. Epidemiological studies have shown that consumption of sugar or sugar-sweetened beverages is associated with unfavourable lipid concentrations, insulin resistance, fatty liver disease, type-2 diabetes, cardiovascular disease and metabolic syndrome (Yoshida et al., 2007). These findings clearly showed that the intake of regular coke cannot be safe for diabetes or people with diabetic history (Jaiprakashet al., 1993).",
+     "bbox": [
+      48.239999999999895,
+      300.76135999999997,
+      292.8775199999998,
+      494.7013599999997
+     ],
+     "box": [
+      48.239999999999895,
+      300.76135999999997,
+      292.8775199999998,
+      505.2913599999996
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 17,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 396,
+     "baseline": 308.57,
+     "angle": 0.0,
+     "translation": "高用量の加糖清涼飲料の摂取は空腹時血糖値を上昇させる可能性があり、肥満、2型糖尿病、心血管疾患など種々の疾患状態に罹患しやすくすることが示されている（Gibson, 2008; Laughlin et al., 2014）。本試験の結果、レギュラーコーク摂取群の被験者では血糖値が有意に上昇した（p < 0.05）。レギュラーコークは、スクロースまたは高果糖コーンシロップの形で糖が添加された清涼飲料である。疫学研究により、糖または加糖飲料の摂取は、望ましくない脂質濃度、インスリン抵抗性、脂肪肝、2型糖尿病、心血管疾患およびメタボリックシンドロームと関連することが示されている（Yoshida et al., 2007）。これらの知見は、レギュラーコークの摂取が糖尿病患者や糖尿病既往のある者にとって安全とはいえないことを明確に示している（Jaiprakash et al., 1993）。",
+     "render_size": 8.76,
+     "overflow": false
+    },
+    {
+     "id": "p3-35",
+     "page": 2,
+     "kind": "heading",
+     "text": "5. Conclusion",
+     "bbox": [
+      310.6299999999999,
+      367.8019999999996,
+      381.574,
+      379.80199999999996
+     ],
+     "box": [
+      310.6299999999999,
+      367.8019999999996,
+      555.35716,
+      389.70135999999997
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 19,
+     "baseline": 377.21,
+     "angle": 0.0,
+     "translation": "5. 結論",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-36",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "The findings of this study have shown that regular coke and coke zero are likely to predispose one to some diseases. Regular coke, in particular, was observed to increase the concentration of blood glucose, which is a marker of diabetes mellitus. Also, the decreased serum HDL- cholesterol and increased serum total cholesterol, LDL- cholesterol and AST activity showed by both coke products may reflect lipid profile abnormality and a mild toxic effect on organs other than the liver that elaborate AST.",
+     "bbox": [
+      310.63,
+      392.70135999999997,
+      555.35716,
+      494.70135999999985
+     ],
+     "box": [
+      310.63,
+      392.70135999999997,
+      555.35716,
+      505.7319999999998
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 9,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 210,
+     "baseline": 400.51,
+     "angle": 0.0,
+     "translation": "本研究の結果、レギュラーコークおよびコカ・コーラ ゼロはいくつかの疾患に罹患しやすくする可能性が高いことが示された。特にレギュラーコークは、糖尿病の指標である血糖値を上昇させることが認められた。また、両コーク製品でみられた血清 HDL コレステロールの低下、ならびに血清総コレステロール、LDL コレステロールおよび AST 活性の上昇は、脂質プロファイルの異常と、ASTを産生する肝臓以外の臓器に対する軽度の毒性作用を反映している可能性がある。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-37",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "Coke zero, on the other hand, exerted no influence on blood glucose concentration of healthy human subjects (Table 1). This can be attributed to the fact that coke zero has a low calorie content and no added sugars. However, evidence from some studies suggest that the aspartame content of coke zero can increase food intakes by both humans and animals, and when taken indiscriminately could lead to an abnormally raised blood glucose concentration and an abnormal lipid profile parameters.",
+     "bbox": [
+      48.24000000000001,
+      507.7813599999996,
+      292.92632000000003,
+      609.6913599999996
+     ],
+     "box": [
+      48.24000000000001,
+      507.7813599999996,
+      292.92632000000003,
+      620.2813599999996
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 9,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 210,
+     "baseline": 515.59,
+     "angle": 0.0,
+     "translation": "一方、コカ・コーラ ゼロは健常被験者の血糖値に影響を及ぼさなかった（表1）。これは、コカ・コーラ ゼロのカロリーが低く、糖が添加されていないことによると考えられる。しかし、コカ・コーラ ゼロに含まれるアスパルテームがヒトおよび動物の食物摂取量を増加させることを示唆する研究報告もあり、無制限に摂取すれば血糖値の異常な上昇や脂質プロファイルパラメータの異常を招く可能性がある。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-38",
+     "page": 2,
+     "kind": "heading",
+     "text": "6. Acknowledgement",
+     "bbox": [
+      310.6300000000001,
+      508.2219999999998,
+      418.738,
+      520.222
+     ],
+     "box": [
+      310.6300000000001,
+      508.2219999999998,
+      555.35716,
+      529.9813599999999
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 19,
+     "baseline": 517.63,
+     "angle": 0.0,
+     "translation": "6. 謝辞",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-39",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "The authors gratefully acknowledge the good secretarial work of Happiness Michael.",
+     "bbox": [
+      310.63,
+      532.9813599999999,
+      555.1778799999998,
+      554.49136
+     ],
+     "box": [
+      310.63,
+      532.9813599999999,
+      555.1778799999998,
+      565.5219999999999
+     ],
+     "size": 9.96,
+     "leading": 1.16,
+     "lines": 2,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 540.79,
+     "angle": 0.0,
+     "translation": "著者らは、Happiness Michael 氏の秘書業務に深く感謝する。",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-40",
+     "page": 2,
+     "kind": "heading",
+     "text": "References",
+     "bbox": [
+      310.63,
+      568.012,
+      366.394,
+      580.012
+     ],
+     "box": [
+      310.63,
+      568.012,
+      555.35716,
+      589.8913599999998
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 19,
+     "baseline": 577.42,
+     "angle": 0.0,
+     "translation": "参考文献",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-41",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "[1] Al-Mamary, M., Al-Habori, M., Al-Aghabari, A. M. and Baker, M. M. (2002). Investigation into the toxicological effects of cataedulis leaves: A short-term study in animals.Phytother Res. 16, 127 - 132.",
+     "bbox": [
+      310.63,
+      592.8913599999998,
+      555.2900799999999,
+      637.2913599999999
+     ],
+     "box": [
+      310.63,
+      592.8913599999998,
+      555.2900799999999,
+      637.2913599999999
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 70,
+     "baseline": 600.7,
+     "angle": 0.0,
+     "translation": "[1] Al-Mamary, M., Al-Habori, M., Al-Aghabari, A. M. and Baker, M. M. (2002). Investigation into the toxicological effects of cataedulis leaves: A short-term study in animals.Phytother Res. 16, 127 - 132.",
+     "render_size": 9.66,
+     "overflow": false
+    },
+    {
+     "id": "p3-42",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "Ordinarily, hepatotoxic agents cause the release of certain enzymes (e.g. aspartate aminotransferase, AST, alanine aminotransferase ALT, etc) into the bloodstream as a result of damage to liver cells (Moore et al., 1985).From the findings of this study, both coke zero and regular coke induced a significant increase in serum AST activity and a non-significant effect on serum ALT activity. AST appears in high concentrations in a number of tissues (liver, kidneys, heart and pancreas) and is released slowly in comparison to ALT. But since ALT is localized primarily in the cytosol of hepatocytes (liver cells), this enzyme is considered a more sensitive marker of hepatocellular damage than AST (Al- Mamaryet al., 2002). Now, as both regular coke and coke",
+     "bbox": [
+      48.23999999999998,
+      622.7713599999996,
+      292.93868000000003,
+      770.7513599999996
+     ],
+     "box": [
+      48.23999999999998,
+      622.7713599999996,
+      292.93868000000003,
+      780.462
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 13,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 303,
+     "baseline": 630.58,
+     "angle": 0.0,
+     "translation": "通常、肝毒性物質は肝細胞の障害の結果として、特定の酵素（アスパラギン酸アミノトランスフェラーゼ（AST）、アラニンアミノトランスフェラーゼ（ALT）など）を血流中へ放出させる（Moore et al., 1985）。本試験の結果から、コカ・コーラ ゼロとレギュラーコークはいずれも血清AST活性を有意に上昇させ、血清ALT活性には有意な影響を及ぼさなかった。ASTは多くの組織（肝臓、腎臓、心臓、膵臓）に高濃度で存在し、ALTに比べて緩徐に放出される。しかしALTは主に肝細胞（肝臓の細胞）の細胞質ゾルに局在するため、この酵素はASTよりも肝細胞障害の鋭敏なマーカーと考えられている（Al-Mamary et al., 2002）。さて、レギュラーコークとコカ・コーラ ゼロはいずれも血清AST活性のみを高値とした点から、この作用は肝臓以外の組織から酵素が血流中へ漏出することを許す軽度の毒性を反映している可能性があると言える。ただし、レギュラーコークとコカ・コーラ ゼロ",
+     "render_size": 6.37,
+     "overflow": false
+    },
+    {
+     "id": "p3-43",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "[2] Gibson, S. (2008). Sugar-sweetened soft drinks and obesity: A systematic review of the evidence from observational studies and interventions. Nutrition Research Reviews, 21(2), 134 – 147.",
+     "bbox": [
+      310.63,
+      638.85136,
+      555.25576,
+      683.25136
+     ],
+     "box": [
+      310.63,
+      638.85136,
+      555.25576,
+      683.25136
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 69,
+     "baseline": 646.66,
+     "angle": 0.0,
+     "translation": "[2] Gibson, S. (2008). Sugar-sweetened soft drinks and obesity: A systematic review of the evidence from observational studies and interventions. Nutrition Research Reviews, 21(2), 134 – 147.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-44",
+     "page": 2,
+     "kind": "line",
+     "text": "[3] Jaiprakash, J., Thomas, P., Cavan, D. and Keer, D.",
+     "bbox": [
+      310.63,
+      684.8113599999999,
+      555.3300200000001,
+      694.77136
+     ],
+     "box": [
+      298.91468000000003,
+      684.8113599999999,
+      555.3300200000001,
+      694.77136
+     ],
+     "size": 9.96,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "right",
+     "translate": true,
+     "max_chars": 24,
+     "baseline": 692.62,
+     "angle": 0.0,
+     "translation": "[3] Jaiprakash, J., Thomas, P., Cavan, D. and Keer, D.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-45",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "(1993). Preventing childhood obesity by reducing consumption of carbonated drinks: Cluster randomized controlled trial. British Medical Journal, 328(7450), 1237.",
+     "bbox": [
+      328.6300000000001,
+      696.33136,
+      555.2326000000002,
+      740.87136
+     ],
+     "box": [
+      328.6300000000001,
+      696.33136,
+      555.2326000000002,
+      740.87136
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 64,
+     "baseline": 704.14,
+     "angle": 0.0,
+     "translation": "(1993). Preventing childhood obesity by reducing consumption of carbonated drinks: Cluster randomized controlled trial. British Medical Journal, 328(7450), 1237.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-46",
+     "page": 2,
+     "kind": "paragraph",
+     "text": "[4] Konstantinos, L. (2012). Aretaeus of Cappadocia and the first description of diabetes.Hormones, 11(1), 109 – 113.",
+     "bbox": [
+      310.6300000000001,
+      742.3113599999999,
+      555.3000000000001,
+      775.3113599999999
+     ],
+     "box": [
+      310.6300000000001,
+      742.3113599999999,
+      555.3000000000001,
+      780.462
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 3,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 70,
+     "baseline": 750.12,
+     "angle": 0.0,
+     "translation": "[4] Konstantinos, L. (2012). Aretaeus of Cappadocia and the first description of diabetes. Hormones, 11(1), 109 – 113.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p3-47",
+     "page": 2,
+     "kind": "heading",
+     "text": "Volume 4 Issue 11, November 2015",
+     "bbox": [
+      211.97,
+      782.952,
+      391.058,
+      794.952
+     ],
+     "box": [
+      48.239999999999895,
+      782.952,
+      554.7880000000001,
+      794.952
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 40,
+     "baseline": 792.36,
+     "angle": 0.0,
+     "translation": "Volume 4 Issue 11, November 2015",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-48",
+     "page": 2,
+     "kind": "heading",
+     "text": "www.ijsr.net",
+     "bbox": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "box": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 806.16,
+     "angle": 0.0,
+     "translation": "www.ijsr.net",
+     "render_size": 9.84,
+     "overflow": false
+    },
+    {
+     "id": "p3-49",
+     "page": 2,
+     "kind": "line",
+     "text": "Paper ID: NOV151203",
+     "bbox": [
+      72.0,
+      806.6920488,
+      152.04,
+      814.6920488
+     ],
+     "box": [
+      72.0,
+      806.6920488,
+      185.44999999999996,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 13,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "Paper ID: NOV151203",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-50",
+     "page": 2,
+     "kind": "line",
+     "text": "1518",
+     "bbox": [
+      505.5230103,
+      806.6920488,
+      523.3150103,
+      814.6920488
+     ],
+     "box": [
+      505.5230103,
+      806.6920488,
+      555.35716,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "1518",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p3-51",
+     "page": 2,
+     "kind": "line",
+     "text": "Licensed Under Creative Commons Attribution CC BY",
+     "bbox": [
+      190.24999999999997,
+      810.11136,
+      412.77631999999994,
+      820.0713599999999
+     ],
+     "box": [
+      158.016,
+      810.11136,
+      445.0103199999999,
+      820.0713599999999
+     ],
+     "size": 9.96,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 27,
+     "baseline": 817.92,
+     "angle": 0.0,
+     "translation": "Licensed Under Creative Commons Attribution CC BY",
+     "render_size": 9.96,
+     "overflow": false
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "width": 595.32,
+   "height": 841.92,
+   "rotation": 0,
+   "status": "ok",
+   "note": "",
+   "segments": [
+    {
+     "id": "p4-1",
+     "page": 3,
+     "kind": "heading",
+     "text": "International Journal of Science and Research (IJSR)",
+     "bbox": [
+      164.3,
+      8.831999999999994,
+      438.788,
+      20.831999999999994
+     ],
+     "box": [
+      56.00799999999987,
+      8.831999999999994,
+      547.0800000000002,
+      20.831999999999994
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 38,
+     "baseline": 18.24,
+     "angle": 0.0,
+     "translation": "International Journal of Science and Research (IJSR)",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p4-2",
+     "page": 3,
+     "kind": "line",
+     "text": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "bbox": [
+      160.70000000000002,
+      22.43136000000004,
+      442.4186000000001,
+      43.911359999999945
+     ],
+     "box": [
+      56.038599999999946,
+      22.43136000000004,
+      547.0800000000002,
+      43.911359999999945
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 2,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 30.24,
+     "angle": 0.0,
+     "translation": "ISSN (Online): 2319-7064\nIndex Copernicus Value (2013): 6.14 | Impact Factor (2014): 5.611",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p4-3",
+     "page": 3,
+     "kind": "paragraph",
+     "text": "[5] Laughlin, M. R. (2014). Normal roles for dietary fructose in carbohydrate metabolism.Nutrients, 6(8), 3117 – 3129.",
+     "bbox": [
+      48.24,
+      51.59136000000001,
+      292.90280000000007,
+      84.61135999999988
+     ],
+     "box": [
+      48.24,
+      51.59136000000001,
+      292.90280000000007,
+      84.61135999999988
+     ],
+     "size": 9.96,
+     "leading": 1.158,
+     "lines": 3,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 46,
+     "baseline": 59.4,
+     "angle": 0.0,
+     "translation": "[5] Laughlin, M. R. (2014). Normal roles for dietary fructose in carbohydrate metabolism.Nutrients, 6(8), 3117 – 3129.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p4-4",
+     "page": 3,
+     "kind": "paragraph",
+     "text": "[6] Moore, M., Thor, H., Moore, G., Nelson, S., Moldeus, P. and Orrhenius, S. (1985). The toxicity of acetaminophen and N-acetyl p-benzoquinoneimine in isolated hepatocytes is associated with the depletion and increased cytosolic Ca<sup>2+</sup>. Journal of Biological Chemistry, 260, 13035 – 13040.",
+     "bbox": [
+      48.240000000000016,
+      86.05135999999993,
+      292.93148,
+      153.61135999999976
+     ],
+     "box": [
+      48.240000000000016,
+      86.05135999999993,
+      292.93148,
+      153.61135999999976
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 6,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 116,
+     "baseline": 93.86,
+     "angle": 0.0,
+     "translation": "[6] Moore, M., Thor, H., Moore, G., Nelson, S., Moldeus, P. and Orrhenius, S. (1985). The toxicity of acetaminophen and N-acetyl p-benzoquinoneimine in isolated hepatocytes is associated with the depletion and increased cytosolic Ca<sup>2+</sup>. Journal of Biological Chemistry, 260, 13035 – 13040.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p4-5",
+     "page": 3,
+     "kind": "paragraph",
+     "text": "[7] Richard, G. (2012). Origin of coca-cola Columbus Georigia.Journal of Christmas Ideology and Popular Culture, 4, 50 – 70\n[8] Santaguida, P. L., Balion, C., Hunt, D., Morrison, K., Gerstein, H., Raina, P., Booker, L. and Yazdi, H.",
+     "bbox": [
+      48.23999999999995,
+      155.05135999999982,
+      292.9478,
+      211.0913599999999
+     ],
+     "box": [
+      48.23999999999995,
+      155.05135999999982,
+      292.9478,
+      211.0913599999999
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 5,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 162.86,
+     "angle": 0.0,
+     "translation": "[7] Richard, G. (2012). Origin of coca-cola Columbus Georigia.Journal of Christmas Ideology and Popular Culture, 4, 50 – 70\n[8] Santaguida, P. L., Balion, C., Hunt, D., Morrison, K., Gerstein, H., Raina, P., Booker, L. and Yazdi, H.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p4-6",
+     "page": 3,
+     "kind": "paragraph",
+     "text": "(2008). Diagnosis, prognosis and treatment of impaired glucose tolerance fasting glucose.Summary of Evidence Report/Technology Assessment, No. 128 agency for healthcare Research and Quality.",
+     "bbox": [
+      66.26400000000001,
+      212.65135999999995,
+      292.78304,
+      257.0813599999999
+     ],
+     "box": [
+      66.26400000000001,
+      212.65135999999995,
+      292.78304,
+      257.0813599999999
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 64,
+     "baseline": 220.46,
+     "angle": 0.0,
+     "translation": "(2008). Diagnosis, prognosis and treatment of impaired glucose tolerance fasting glucose.Summary of Evidence Report/Technology Assessment, No. 128 agency for healthcare Research and Quality.",
+     "render_size": 9.06,
+     "overflow": false
+    },
+    {
+     "id": "p4-7",
+     "page": 3,
+     "kind": "line",
+     "text": "[9] Vartanion, L. R., Schwartz, M. B. and Brownell, K. D.",
+     "bbox": [
+      48.24000000000001,
+      258.64135999999996,
+      292.82002000000006,
+      268.6013599999999
+     ],
+     "box": [
+      48.24000000000001,
+      258.64135999999996,
+      547.0800000000002,
+      268.6013599999999
+     ],
+     "size": 9.96,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 47,
+     "baseline": 266.45,
+     "angle": 0.0,
+     "translation": "[9] Vartanion, L. R., Schwartz, M. B. and Brownell, K. D.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p4-8",
+     "page": 3,
+     "kind": "paragraph",
+     "text": "(2007). Effects of soft drink consumption on nutrition and health: A systematic review and meta-analysis. American Journal of Public Health, 97(4), 667 – 675. [10] Yoshida, M., Mckeown, N. M., Rogers, G., Meigs, J. B., Saltzman, E., D’Agostino, R. and Jacques, P. F.",
+     "bbox": [
+      48.24000000000015,
+      270.16135999999995,
+      292.9399600000002,
+      326.0813599999998
+     ],
+     "box": [
+      48.24000000000015,
+      270.16135999999995,
+      292.9399600000002,
+      326.0813599999998
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 5,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 93,
+     "baseline": 277.97,
+     "angle": 0.0,
+     "translation": "(2007). Effects of soft drink consumption on nutrition and health: A systematic review and meta-analysis. American Journal of Public Health, 97(4), 667 – 675. [10] Yoshida, M., Mckeown, N. M., Rogers, G., Meigs, J. B., Saltzman, E., D’Agostino, R. and Jacques, P. F.",
+     "render_size": 9.66,
+     "overflow": false
+    },
+    {
+     "id": "p4-9",
+     "page": 3,
+     "kind": "paragraph",
+     "text": "(2007). Surrogate markers of insulin resistance are associated with consumption of sugar sweetened drinks and juices in middle and older aged adults. Journal of Clinical Nutrition, 137, 2121 – 2127.",
+     "bbox": [
+      66.26400000000018,
+      327.64135999999985,
+      292.97888000000023,
+      372.04135999999977
+     ],
+     "box": [
+      66.26400000000018,
+      327.64135999999985,
+      292.97888000000023,
+      780.462
+     ],
+     "size": 9.96,
+     "leading": 1.157,
+     "lines": 4,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 821,
+     "baseline": 335.45,
+     "angle": 0.0,
+     "translation": "(2007). Surrogate markers of insulin resistance are associated with consumption of sugar sweetened drinks and juices in middle and older aged adults. Journal of Clinical Nutrition, 137, 2121 – 2127.",
+     "render_size": 9.96,
+     "overflow": false
+    },
+    {
+     "id": "p4-10",
+     "page": 3,
+     "kind": "heading",
+     "text": "Volume 4 Issue 11, November 2015",
+     "bbox": [
+      211.97,
+      782.952,
+      391.058,
+      794.952
+     ],
+     "box": [
+      55.94799999999984,
+      782.952,
+      547.0800000000002,
+      794.952
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 38,
+     "baseline": 792.36,
+     "angle": 0.0,
+     "translation": "Volume 4 Issue 11, November 2015",
+     "render_size": 12.0,
+     "overflow": false
+    },
+    {
+     "id": "p4-11",
+     "page": 3,
+     "kind": "heading",
+     "text": "www.ijsr.net",
+     "bbox": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "box": [
+      268.97,
+      796.752,
+      334.25,
+      808.752
+     ],
+     "size": 12.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": true,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": false,
+     "max_chars": 5,
+     "baseline": 806.16,
+     "angle": 0.0,
+     "translation": "www.ijsr.net",
+     "render_size": 9.84,
+     "overflow": false
+    },
+    {
+     "id": "p4-12",
+     "page": 3,
+     "kind": "line",
+     "text": "Paper ID: NOV151203",
+     "bbox": [
+      72.0,
+      806.6920488,
+      152.04,
+      814.6920488
+     ],
+     "box": [
+      72.0,
+      806.6920488,
+      185.44999999999996,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "left",
+     "translate": true,
+     "max_chars": 13,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "Paper ID: NOV151203",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p4-13",
+     "page": 3,
+     "kind": "line",
+     "text": "1519",
+     "bbox": [
+      505.5230103,
+      806.6920488,
+      523.3150103,
+      814.6920488
+     ],
+     "box": [
+      417.57631999999995,
+      806.6920488,
+      523.3150103,
+      821.92
+     ],
+     "size": 8.0,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": false,
+     "color": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "align": "right",
+     "translate": false,
+     "max_chars": 12,
+     "baseline": 813.04,
+     "angle": 0.0,
+     "translation": "1519",
+     "render_size": 8.0,
+     "overflow": false
+    },
+    {
+     "id": "p4-14",
+     "page": 3,
+     "kind": "line",
+     "text": "Licensed Under Creative Commons Attribution CC BY",
+     "bbox": [
+      190.24999999999997,
+      810.11136,
+      412.77631999999994,
+      820.0713599999999
+     ],
+     "box": [
+      158.016,
+      810.11136,
+      445.0103199999999,
+      820.0713599999999
+     ],
+     "size": 9.96,
+     "leading": 1.2,
+     "lines": 1,
+     "bold": false,
+     "serif": true,
+     "color": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "align": "center",
+     "translate": true,
+     "max_chars": 27,
+     "baseline": 817.92,
+     "angle": 0.0,
+     "translation": "Licensed Under Creative Commons Attribution CC BY",
+     "render_size": 9.96,
+     "overflow": false
+    }
+   ]
+  }
+ ]
+}

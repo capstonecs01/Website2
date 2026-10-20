@@ -1,0 +1,48 @@
+# ---- dependencies ----
+node_modules/
+**/node_modules/
+
+# ---- secrets / environment ----
+.env
+**/.env
+*.local
+
+# ---- database & uploaded files (real data, never commit) ----
+junction.db
+junction.db-*
+**/junction.db
+**/junction.db-*
+**/uploads/*
+!**/uploads/.gitkeep
+
+# ---- build output ----
+dist/
+dist-ssr/
+**/dist/
+
+# ---- python (pdf-translator) ----
+__pycache__/
+**/__pycache__/
+*.pyc
+venv/
+.venv/
+**/translation_jobs/
+
+# ---- claude code local settings ----
+.claude/
+
+# ---- original download archives / stray root lockfile ----
+*.zip
+/package-lock.json
+
+# ---- logs / editor / os ----
+*.log
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
