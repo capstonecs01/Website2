@@ -28,6 +28,10 @@ venv/
 .venv/
 **/translation_jobs/
 
+# ---- test site on this computer (start-test-site.bat) ----
+test-site.env
+test-site-address.txt
+
 # ---- claude code local settings ----
 .claude/
 

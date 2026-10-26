@@ -17,9 +17,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const app = express();
 const PORT = process.env.PORT || 3001;
+// HOST=127.0.0.1 makes the server accept connections from this computer only
+// (start-test-site.bat sets it, so the tunnel is the only way in). Unset = all.
+const HOST = process.env.HOST || "";
 
-// On Render the app sits behind Render's proxy, which handles HTTPS. Trusting it
-// lets Express see the visitor's real IP address and that the page is HTTPS.
+// On Render (or behind the Cloudflare tunnel, TRUST_PROXY=1) the app sits behind a
+// proxy that handles HTTPS. Trusting it lets Express see the visitor's real IP
+// address and that the page is HTTPS.
 if (process.env.RENDER || process.env.TRUST_PROXY) app.set("trust proxy", 1);
 
 // Test-site password (only when SITE_PASSWORD is set; see utils/sitePassword.js).
@@ -60,7 +64,7 @@ if (fs.existsSync(INDEX_HTML)) {
 // not when it's imported (e.g. by tests that mount the app on an ephemeral port).
 const isMain = process.argv[1] === fileURLToPath(import.meta.url);
 if (isMain) {
-  app.listen(PORT, () => {
-    console.log(`[server] Junction API running on http://localhost:${PORT}`);
-  });
+  const ready = () => console.log(`[server] Junction API running on http://${HOST || "localhost"}:${PORT}`);
+  if (HOST) app.listen(PORT, HOST, ready);
+  else app.listen(PORT, ready);
 }
